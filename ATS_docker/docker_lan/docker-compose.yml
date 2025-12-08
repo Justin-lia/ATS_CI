@@ -1,0 +1,26 @@
+version: '3'
+services:
+  robot:
+    build: .
+    image: env-lan:v1
+    container_name: env-lan
+    privileged: true
+    networks:
+      lan_net_dut_lan:    
+      lan_net:
+        ipv4_address: 192.168.100.20
+    tty: true
+    environment:
+      - DISPLAY=:99
+    volumes:
+      - ./tests:/workspace/tests
+      - ~/.ssh:/root/.ssh
+      
+networks:
+  lan_net:
+    external: true
+    name: env_net
+  lan_net_dut_lan:
+    driver: macvlan
+    driver_opts:
+      parent: enp3s0f1.20

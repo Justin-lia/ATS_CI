@@ -1,0 +1,35 @@
+version: '3'
+services:
+  robot:
+    build: .
+    image: env-ats:v1
+    container_name: env-ats
+    privileged: true
+    networks:
+      ats_net:
+        ipv4_address: 192.168.100.10
+      ats_net_dut_lan:
+        ipv4_address: 192.168.1.2
+      ats_net_internet:
+    tty: true
+    environment:
+      - DISPLAY=:99
+    volumes:
+      - ./tests:/workspace/tests
+      - ~/.ssh:/root/.ssh
+      
+networks:
+  ats_net:
+    external: true
+    name: env_net
+  ats_net_dut_lan:
+    driver: macvlan
+    driver_opts:
+      parent: enp3s0f1.20
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+  ats_net_internet:
+    driver: macvlan
+    driver_opts:
+      parent: enp3s0f1

@@ -1,0 +1,27 @@
+version: '3'
+services:
+  robot:
+    build: .
+    image: env-wan:v1
+    container_name: env-wan
+    privileged: true
+    init: true
+    networks:
+      wan_net_dut_wan:
+      wan_net:
+        ipv4_address: 192.168.100.30
+    tty: true
+    volumes:
+      - ./tests:/workspace/tests
+      - ~/.ssh:/root/.ssh
+      - /lib/modules:/lib/modules:ro
+    command: ["sh", "-c", "ntpd -n & tail -f /dev/null"]
+networks:
+  wan_net:
+    external: true
+    name: env_net
+  wan_net_dut_wan:
+    driver: macvlan
+    enable_ipv6: true    
+    driver_opts:
+      parent: enp3s0f1.30
