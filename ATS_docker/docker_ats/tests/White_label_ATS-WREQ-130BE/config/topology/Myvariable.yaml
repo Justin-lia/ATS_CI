@@ -1,0 +1,187 @@
+DEVICES:
+  wifi_client:
+    ip: 172.16.0.18
+    timeout: 60
+    type: linux
+    protocol: telnet
+    port: 23
+    user_name: gemtek
+    password: gemtek
+    login_prompt: 'login:'
+    password_prompt: 'Password:'
+    prompt: gemtek@gemtek
+    int: wlo1
+    int_5G: wlo1
+    interface: wlo1
+    hostname: lab-HP
+    int_2_4g: wlo1
+    MAC: d4:f3:2d:c7:dd:1e
+
+
+  wifi_client2:
+    ip: 172.16.0.19
+    timeout: 60
+    type: linux
+    protocol: telnet
+    port: 23
+    user_name: gemtek
+    password: gemtek
+    login_prompt: 'login:'
+    password_prompt: 'Password:'
+    prompt: gemtek@gemtek
+    int: wlo1
+    interface: wlo1
+    int_5G: wlo1
+    hostname: lab-PC
+    int_2_4g: wlo1
+    MAC: d4:f3:2d:c4:38:e4
+
+  DUT_serial_port:
+    comPort: /dev/ttyUSB0
+    baud_num: 115200
+    prompt: root
+    timeout: 10
+    protocol: serial
+
+
+  console:
+    prompt: '#'
+    login_prompt: 'Username'
+    password_prompt: 'Password:'
+    user: lab
+    password: lab
+    vendor: console
+    ip: "10.5.161.198"
+    port: 2033
+    protocol: telnet
+    timeout: 30
+    type: linux
+    
+
+  ciscoRouter:
+    user_name: ""
+    password: lab
+    vendor: cisco
+    hostname: C1801>
+    ip: "10.5.161.33"
+    port: 2037
+    protocol: telnet
+    timeout: 10
+    type: linux
+    login_prompt:  "User Access Verification"
+    password_prompt: 'Password:'
+    prompt: Password OK
+
+
+  IPv6_Server:
+   ip: 172.16.0.22
+   timeout: 30
+   type: linux
+   protocol: telnet
+   port: 23
+   user: gemtek
+   password: gemtek
+   root_password: 'gemtek'
+   prompt: ['gemtek@gemtek']
+   interface: enp3s0
+
+
+  terminal_server:
+    user_name: ""
+    prompt: ATS-TERMSERV>
+    login_prompt:  "User Access Verification"
+    password_prompt: 'Password:'
+    user: lab
+    password: lab
+    ip: "10.5.161.190"
+    port: 23
+    protocol: telnet
+    timeout: 30
+    type: linux
+
+
+  DUT_WAN_Telnet:
+    #ip: 10.5.182.195
+    ip: 172.16.11.20
+    timeout: 60
+    type: linux
+    protocol: telnet
+    port: 23
+    user: root
+    password: 5/4jp6t03qup3
+    #prompt: ['vagrant\@dual-wifi-client2\:\~\$']
+    prompt: ['root@']
+    #prompt: ['vagrant\@thomas-VPCEB37FW\:\~\$']
+
+
+  DUT_LAN_SSH:
+    ip: 192.168.1.1
+    timeout: 60
+    type: linux
+    protocol: ssh
+    port: 22
+    user: root
+    password: 5/4jp6t03qup3
+    #prompt: ['vagrant\@dual-wifi-client2\:\~\$']
+    prompt: ['root@']
+
+
+  DUT_LAN_Telnet:
+    #ip: 10.5.182.195
+    ip: 192.168.1.1
+    timeout: 60
+    type: linux
+    protocol: telnet
+    port: 23
+    user: root
+    password: 5/4jp6t03qup3
+    #prompt: ['vagrant\@dual-wifi-client2\:\~\$']
+    prompt: ['root@']
+    #prompt: ['vagrant\@thomas-VPCEB37FW\:\~\$']
+
+
+  cisco_LAN_Switch:
+    user_name: ""
+    password: lab
+    vendor: cisco
+    hostname: LAN-SW>
+    ip: "10.5.161.33"
+    port: 2034
+    protocol: telnet
+    timeout: 10
+    type: linux
+    login_prompt:  "User Access Verification"
+    password_prompt: 'Password:'
+    prompt: Password OK
+
+  
+
+  lanhost:
+   ip: 172.16.0.52
+   timeout: 60
+   type: linux
+   protocol: telnet
+   port: 23
+   user_name: vagrant
+   password: vagrant
+   login_prompt: login
+   password_prompt: Password
+   root_password: '123456'
+   prompt: vagrant@lanhost
+   interface: enp6s0
+
+  wanhost:
+    ip: 172.16.0.71
+    timeout: 60
+    type: linux
+    protocol: telnet
+    port: 23
+    user_name: vagrant
+    password: vagrant
+    login_prompt: login
+    password_prompt: Password
+    prompt: vagrant@WAN-host
+    interface: enp6s0
+    interface_Monitor: enp5s0
+    MAC: 00:0a:cd:47:36:a3
+

@@ -1,0 +1,13 @@
+{
+  "basicMapRules" : [
+    {
+      "brIpv6Address" : "2001:380:a120::9",
+      "eaBitLength" : "24",
+      "ipv4Prefix" : "222.222.",
+      "ipv4PrefixLength" : "16",
+      "ipv6Prefix" : "2222:2222::",
+      "ipv6PrefixLength" : "32",
+      "psIdOffset" : "4"
+    }
+  ]
+}

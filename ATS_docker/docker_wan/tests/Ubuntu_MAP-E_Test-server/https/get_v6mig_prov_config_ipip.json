@@ -1,0 +1,12 @@
+    "ipip": [
+        {
+            "ipv6_local": "<ipv6_local>",
+            "ipv6_remote": "<ipv6_remote>",
+            "ipv4": "<ipv4>"
+        },
+        {
+            "ipv6_local": "beef::0001",
+            "ipv6_remote": "bad::0002",
+            "ipv4": "1.2.3.4"
+        }
+    ],

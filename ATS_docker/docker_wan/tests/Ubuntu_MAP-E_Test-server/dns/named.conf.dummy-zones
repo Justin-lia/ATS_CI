@@ -1,0 +1,5 @@
+
+zone "<DummyDomain>" {
+	type master;
+	file "<DummyDomain>.hosts";
+};

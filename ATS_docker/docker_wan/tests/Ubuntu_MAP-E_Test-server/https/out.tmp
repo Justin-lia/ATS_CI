@@ -1,0 +1,1021 @@
+{
+    "basicMapRules": [
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "24",
+            "ipv4Prefix": "153.240.0.0",
+            "ipv4PrefixLength": "14",
+            "ipv6Prefix": "2400:4050:0000::",
+            "ipv6PrefixLength": "32",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "21",
+            "ipv4Prefix": "122.26.0.0",
+            "ipv4PrefixLength": "17",
+            "ipv6Prefix": "2400:4051:0000::",
+            "ipv6PrefixLength": "35",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.146.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:2000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.148.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:3000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.150.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:4000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.163.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:5000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.163.128.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:6000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.167.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:7000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.172.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:8000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "114.177.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:9000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "118.0.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:A000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "118.7.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:B000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "118.8.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:C000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "118.9.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:D000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "123.218.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:E000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "123.220.128.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4051:F000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "123.225.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:0000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.134.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:1000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.139.128.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:2000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.151.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:3000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.170.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:4000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.170.192.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4052:5000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "61.127.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:6000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.146.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:6800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.146.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:7000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.148.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:7800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.148.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:8000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.149.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:8800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.150.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:9000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.158.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4052:9800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.162.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:0000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.163.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:0800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.165.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:1000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.167.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:1800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.177.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:2000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "114.178.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:2800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.1.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:3000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.3.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:3800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.6.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:4000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.7.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:4800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.7.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:5000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.9.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:5800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.9.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:6000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "118.22.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:6800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "122.16.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:7000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "123.220.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4053:7800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "22",
+            "ipv4Prefix": "153.173.0.0",
+            "ipv4PrefixLength": "16",
+            "ipv6Prefix": "2400:4053:8000::",
+            "ipv6PrefixLength": "34",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "22",
+            "ipv4Prefix": "153.238.0.0",
+            "ipv4PrefixLength": "16",
+            "ipv6Prefix": "2400:4053:C000::",
+            "ipv6PrefixLength": "34",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "22",
+            "ipv4Prefix": "153.239.0.0",
+            "ipv4PrefixLength": "16",
+            "ipv6Prefix": "2400:4150:0000::",
+            "ipv6PrefixLength": "34",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "22",
+            "ipv4Prefix": "153.252.0.0",
+            "ipv4PrefixLength": "16",
+            "ipv6Prefix": "2400:4150:4000::",
+            "ipv6PrefixLength": "34",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "123.222.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4150:8000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "123.225.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4150:8800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "123.225.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4150:9000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "124.84.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4150:9800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "22",
+            "ipv4Prefix": "180.60.0.0",
+            "ipv4PrefixLength": "16",
+            "ipv6Prefix": "2400:4151:0000::",
+            "ipv6PrefixLength": "34",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "21",
+            "ipv4Prefix": "153.139.0.0",
+            "ipv4PrefixLength": "17",
+            "ipv6Prefix": "2400:4151:4000::",
+            "ipv6PrefixLength": "35",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "21",
+            "ipv4Prefix": "219.161.128.0",
+            "ipv4PrefixLength": "17",
+            "ipv6Prefix": "2400:4151:6000::",
+            "ipv6PrefixLength": "35",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.187.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4151:8000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "153.191.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4151:9000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "180.12.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4151:A000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "180.13.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4151:B000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "124.84.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4151:C000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "124.98.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4151:C800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "124.100.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4151:D000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "124.100.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4151:D800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "180.16.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4152:0000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "180.29.128.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4152:1000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "180.59.64.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4152:2000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "20",
+            "ipv4Prefix": "219.161.0.0",
+            "ipv4PrefixLength": "18",
+            "ipv6Prefix": "2400:4152:3000::",
+            "ipv6PrefixLength": "36",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.129.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:4000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.130.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:4800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.131.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:5000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.131.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:6000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.132.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:6800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.134.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:7000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.137.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:7800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.139.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:8000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.151.32.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:8800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.156.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:9000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.156.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4152:9800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.165.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:0000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.165.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:0800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.171.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:1000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.175.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:1800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.181.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:2000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.183.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:2800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.184.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:3000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.187.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:3800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "18",
+            "ipv4Prefix": "220.106.32.0",
+            "ipv4PrefixLength": "20",
+            "ipv6Prefix": "2400:4153:4000::",
+            "ipv6PrefixLength": "38",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "18",
+            "ipv4Prefix": "220.106.48.0",
+            "ipv4PrefixLength": "20",
+            "ipv6Prefix": "2400:4153:4400::",
+            "ipv6PrefixLength": "38",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.188.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:4800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.190.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:5000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.191.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:5800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.191.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:6000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "153.194.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:6800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "18",
+            "ipv4Prefix": "220.106.64.0",
+            "ipv4PrefixLength": "20",
+            "ipv6Prefix": "2400:4153:7000::",
+            "ipv6PrefixLength": "38",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "18",
+            "ipv4Prefix": "220.106.80.0",
+            "ipv4PrefixLength": "20",
+            "ipv6Prefix": "2400:4153:7400::",
+            "ipv6PrefixLength": "38",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.12.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:8000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.26.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:8800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.26.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:9000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.26.224.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:9800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.30.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:A000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.31.96.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:A800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.32.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:B000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.34.160.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:B800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.46.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:C000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.48.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:C800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.50.192.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:D000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "180.53.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:D800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "218.230.128.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:E000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "219.161.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:E800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "220.96.64.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:F000::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        },
+        {
+            "brIpv6Address": "2001:380:A120::9",
+            "eaBitLength": "19",
+            "ipv4Prefix": "220.99.0.0",
+            "ipv4PrefixLength": "19",
+            "ipv6Prefix": "2400:4153:F800::",
+            "ipv6PrefixLength": "37",
+            "psIdOffset": "6"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+$TTL 86400
+@	IN	SOA	ntt.setup.	ntt.setup. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	ntt.setup.
+
+@		IN	A	<SrvIPv4>
+@		IN	AAAA	<SrvIPv6>
+client1	IN	A	192.168.30.112
+client2	IN	A	192.168.30.113
+

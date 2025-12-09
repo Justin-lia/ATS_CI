@@ -1,0 +1,6 @@
+<firmware_download_information>
+	<version number="99.99 99.99" release="y" priority="1">
+		<document_url>http://p.buffalo.jp/download/driver/lan/txt/releasenote_wsr_5400ax6_jp.html</document_url>
+		<binary_url>http://p.buffalo.jp/buf-drv/lan/WSR-5400AX6_v104r1042.bin</binary_url>
+	</version>
+</firmware_download_information>

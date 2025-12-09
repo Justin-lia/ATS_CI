@@ -1,0 +1,54 @@
+#mail infomation
+publisher: jenkins@it.gemteks.com
+recipient: justin_liao@gemteks.com;Shawn_Liang@gemteks.com;Frank_Hung@gemteks.com;Iris_Chen@gemteks.com;Kyo_Hung@gemteks.com;David_Tseng@gemteks.com;Oliver_Tsui@gemteks.com;Amy_Wu@gemteks.com;Ian_Chen@gemteks.com;ray_chang@gemteks.com;Jessica_Jiang@gemteks.com;reese_hung@gemteks.com;george_lin@gemteks.com;eric_lee@gemteks.com
+#recipient: Justin_liao@gemteks.com;shawn_liang@gemteks.com;frank_hung@gemteks.com
+#smtp_server: 127.0.0.1
+smtp_server: mail.it.gemteks.com
+subject: WSR-1166DHP4-Test_report
+
+# read option: cafe / robot
+read_option: robot
+
+#report template
+template_folder: templates
+#template_file: Report_Template_Simple_v3.html
+template_file: report_template_v3.html
+# report information by default:
+
+#file_branch
+dut: file_dut
+report_title: Automation Test Report
+
+
+#mparams from bamboo
+build_id: R15.65
+branch_id: R15.65
+image_version: R15.65
+build_number: R15.65
+result_url: $bamboo_resultsUrl
+
+#build_id: $bamboo_buildResultKey
+#branch_id: $bamboo_buildPlanName
+#image_version: $bamboo_imageVersion
+#build_number: $bamboo_buildNumber
+#result_url: $bamboo_resultsUrl
+
+
+#fetch data from TMS
+is_fetch_tms: true
+key_to_search_issuelink: TMSID
+
+
+#pass rate threshold (unit:%)
+#If the  minum_pass = 80, minum_unstable = 50 , then 80%~100% returns pass, 50%~80% returns unstable, 0%~50% failed.
+pass_rate_threshold:
+  minum_pass: 100
+  minum_unstable: 50
+
+tms_1:
+  type: restful
+  protocol: tms
+  url: http://tms.calix.local/
+  user: soapuser
+  password: Soapuser
+  api_version: 2

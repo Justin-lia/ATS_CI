@@ -1,0 +1,13 @@
+$TTL 86400
+@	IN	SOA	aimremote2.aterm.jp.	aimremote2.aterm.jp. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	aimremote2.aterm.jp.
+
+@		IN	A	<SrvIPv4>
+@		IN	AAAA	<SrvIPv6>
+

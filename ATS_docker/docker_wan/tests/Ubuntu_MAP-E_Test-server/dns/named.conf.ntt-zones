@@ -1,0 +1,5 @@
+
+zone "ntt.setup" {
+	type master;
+	file "ntt.setup.hosts";
+};

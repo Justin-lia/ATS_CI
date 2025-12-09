@@ -1,0 +1,22 @@
+{
+  "basicMapRules" : [
+    {
+      "brIpv6Address" : "<GlobalMapEv6_ocnvc>",
+      "eaBitLength" : "24",
+      "ipv4Prefix" : "14.11.0.0",
+      "ipv4PrefixLength" : "16",
+      "ipv6Prefix" : "2400:4050::",
+      "ipv6PrefixLength" : "32",
+      "psIdOffset" : "4"
+    },
+    {
+      "brIpv6Address" : "<GlobalMapEv6_ocnvc>",
+      "eaBitLength" : "24",
+      "ipv4Prefix" : "106.72.0.0",
+      "ipv4PrefixLength" : "16",
+      "ipv6Prefix" : "2400:4150::",
+      "ipv6PrefixLength" : "32",
+      "psIdOffset" : "4"
+    }
+  ]
+}

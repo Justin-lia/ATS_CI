@@ -1,0 +1,51 @@
+﻿<html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<title>
+ホームページを自動巡回する
+</title>
+<script language="JavaScript">
+<!--
+
+var i = 0;
+var url_max = 3;
+var url = new Array();
+url[0] = "http://buffalo.jp/support_s/connect/success.html";
+url[1] = "http://buffalo.jp/support_s/connect/success.html";
+url[2] = "http://buffalo.jp/support_s/connect/success.html";
+url[3] = "http://buffalo.jp/support_s/connect/success.html";
+
+// Do not select the Web page which denies inline-frame.
+
+function go(){
+  //alert("Start Auto Rounding.");
+  parent.right.location.href = url[0];
+  window.setInterval("go_url()",5000); // Load the Web page every few seconds.
+}
+
+function go_url(){
+  i = i + 1;
+  if (i == url_max){
+    parent.right.location.href = url[i];
+    //alert("Finished Auto Rounding.");
+    i = 0;
+  }else{
+    parent.right.location.href = url[i];
+  }
+}
+ -->
+</script>
+</head>
+<body>
+<h1>既定のWebページを自動巡回するスクリプト</h1>
+<hr>
+ボタンを押すと、下のフレームでWebページを順番に表示します。<br>
+※巡回を停止するときは、Webブラウザを再読み込みしてください。<br>
+<br>
+<input type="button" name="button1" value="Start Auto Rounding" onClick="go()">
+</body>
+</html>

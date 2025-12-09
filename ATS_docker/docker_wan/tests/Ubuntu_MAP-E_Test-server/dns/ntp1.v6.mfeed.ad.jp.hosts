@@ -1,0 +1,13 @@
+$TTL 86400
+@	IN	SOA	ntp1.v6.mfeed.ad.jp.	ntp1.v6.mfeed.ad.jp. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	ntp1.v6.mfeed.ad.jp.
+
+@		IN	A	<SrvIPv4>
+@		IN	AAAA	<SrvIPv6>
+

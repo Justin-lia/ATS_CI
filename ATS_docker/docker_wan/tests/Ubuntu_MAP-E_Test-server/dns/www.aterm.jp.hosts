@@ -1,0 +1,17 @@
+$TTL 86400
+@	IN	SOA	www.aterm.jp.	www.aterm.jp. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	www.aterm.jp.
+
+@		IN	A	<SrvIPv4>
+@		IN	AAAA	<SrvIPv6>
+client1	IN	A	157.7.164.172
+client1	IN	AAAA	2001:db8:1000:0000::2
+client2	IN	A	157.7.164.173
+client2	IN	AAAA	2001:db8:1000:0000::3
+

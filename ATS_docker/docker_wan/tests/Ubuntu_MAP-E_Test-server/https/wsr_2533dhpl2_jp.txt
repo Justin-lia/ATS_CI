@@ -1,0 +1,22 @@
+<firmware_download_information>
+	<version number="9.99 9.99" release="y" priority="3">
+		<document_url>http://buffalo.jp/download/driver/lan/txt/releasenote_wsr_2533dhp2_jp.html</document_url>
+		<binary_url>http://driver.buffalo.jp/buf-drv/lan/wsr-2533dhp2_9.99_9.99_jp_code.enc</binary_url>
+	</version>
+	<version number="9.98 9.98" release="y" priority="2">
+		<document_url>http://buffalo.jp/download/driver/lan/txt/releasenote_wsr_2533dhp2_jp.html</document_url>
+		<binary_url>http://driver.buffalo.jp/buf-drv/lan/wsr-2533dhp2_9.98_9.98_jp_code.enc</binary_url>
+	</version>
+	<version number="9.97 9.97" release="y" priority="1">
+		<document_url>http://buffalo.jp/download/driver/lan/txt/releasenote_wsr_2533dhp2_jp.html</document_url>
+		<binary_url>http://driver.buffalo.jp/buf-drv/lan/wsr-2533dhp2_9.97_9.97_jp_code.enc</binary_url>
+	</version>
+	<version number="1.11 0.04" release="y" priority="2">
+		<document_url>http://buffalo.jp/download/driver/lan/txt/releasenote_wsr_2533dhp2_jp.html</document_url>
+		<binary_url>http://driver.buffalo.jp/buf-drv/lan/wsr-2533dhp2_1.11_0.04_jp_code.enc</binary_url>
+	</version>
+	<version number="1.01 0.02" release="y" priority="2">
+		<document_url>http://buffalo.jp/download/driver/lan/txt/releasenote_wsr_2533dhp2_jp.html</document_url>
+		<binary_url>http://driver.buffalo.jp/buf-drv/lan/wsr-2533dhp2_1.01_0.02_jp_code.enc</binary_url>
+	</version>
+</firmware_download_information>

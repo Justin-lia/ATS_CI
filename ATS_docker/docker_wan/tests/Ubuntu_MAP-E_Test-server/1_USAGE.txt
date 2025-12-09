@@ -1,0 +1,110 @@
+############################################
+##                                        ##
+##    Usage Instruction                   ##
+##                                        ##
+############################################
+
+
+##
+## Connection Diargram in some cases
+##
+Case1) Stand-Alone (w/o -E option)
+PC1=====[LAN]:DUT1:[WAN]=====[IF1]:Test-Server
+
+
+Case2) With external Internet (for resolving various web requests)
+PC1=====[LAN]:DUT1:[WAN]=====[IF1]:Test-Server:[IFx]=====Internet
+
+
+Case3) Inter-CE communication (still experimental)
+PC1=====[LAN]:DUT1:[WAN]=====[IF1]:Test-Server:[IFx]
+PC2=====[LAN]:DUT2:[WAN]=====[IF2]:-|
+
+
+##
+## Prerequisite Packages
+##
+-- lighttpd
+-- radvd
+-- dhcpd (isc-dhcp-server)
+-- named (bind9)
+-- php-cgi
+-- pppoed
+
+
+##
+## System settngs, and Test Server Installation.
+##
+1) Prepare the supported system. Ubuntu16+VirtualBox is recommended when you setup the server on VM.
+2) Connect the devices as above network diagram.
+3) Connect the system to the Internet, and install above prerequisite packages.
+4) Setup NIC configuration.
+-- If you setup the server on VM, you need to bridge NIC devices with VNIC on the VM. (or you can also make the NIC to be recognised in the VM directly as an USB device.)
+-- If you directly connect the USB-NIC to the server PC, you need to rename the interface name to be shorten, otherwise any routing command not working correctly.
+	--> 1) Newly create a textfile "/etc/udev/rules.d/70-persistent-net.rules"
+	--> 2) Add line according to the NIC property. Follwing is my environment sample for your referene. 
+		enx0 is for external Internet, enx1 is for CE1, enx2 is for CE2.
+	Example)
+	SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="60:84:bd:48:d8:a4", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="enx0"
+	SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="84:af:ec:73:72:ee", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="enx1"
+	SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="60:84:bd:48:75:65", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="enx2"
+5) Reboot the PC.
+6) Extract test server files in any place where you like.
+
+
+##
+## Quick Usage
+##
+1) Edit "conf.sh" according to your system.
+-- Modify "DutLocal_1","DutLocal_2" according to the DUT ipv6 local link address suffix.
+-- Modify "Interface_DGW","Interface_1","Interface_2" according to the system network interface name.
+-- Modify "DefaultGW_v4" according to the Internet side v4 network address.
+
+2) Edit "https/lighttpd.conf" according to your system.
+-- Firstly serch the line "url.rewrite-repeat".
+-- According the notation "Select only one line from following 4 lines.", comment or discomment to select the server response-code.
+	--> normally, |"^/(.*)get_rules(\?.*)$" => "/$1get_rules_normal.php$2",| is selected by default.
+-- When you test OCN-VC, another 4 lines is used.
+	--> normally, |"^/(\?ipv6Prefix=.*)$" => "/get_rules_ocn.json$1",| is selected by default.
+
+3) Try "sudo ./start.sh -D", and confirm the DHCP connection is normally established in DUT.
+-- This will start the server with "NoIPv6/DHCP" mode.
+-- Futhermore, there're various options as below.
+
+dispUsage()
+{
+	echo "Usage: $CMDNAME [-p] [-P] [-D] [-B/J/O/T/N/X/U/A] [-c/s] [-h] [-e] [-Fxxx] [-x] [-t]"
+	echo "p --- For testing \"Passthrough mode\". Works as \"Native mode (DHCPv6)\" when it's not set."
+	echo "B --- For testing \"Biglobe IPv6Option\"."
+	echo "J --- For testing \"JPNE v6Plus\"."
+	echo "O --- For testing \"OCN VirtualConnect\"."
+	echo "T --- For testing \"IIJ transix\"."
+	echo "N --- For testing \"NGN Closed Network\"."
+	echo "X --- For testing \"ARTERIA xpass\"."
+	echo "U --- For testing \"Unique Local prefix\"."
+	echo "A --- For testing \"Asahi-net v6Connect\"."
+	echo "  **NOTE** B/J/O/T/N/X/U options are cannot set concurrently. Works as NoIPv6 mode when it's not set."
+	echo "c --- For testing Inter-CE communication (Different CE Addr). Works as Single CE mode when it's not set."
+	echo "s --- For testing Inter-CE communication (Same CE Addr). Works as Single CE mode when it's not set."
+	echo "P --- For testing PPPoE coexistence environment. Disabled when it's not set."
+	echo "D --- For testing DHCPv4 coexistence environment. Disabled when it's not set."
+	echo "h --- For testing HGW mode which disables MAP-E connectivity in J/B mode. Disabled when it's not set."
+	echo "e --- For enabling routing to External Network. Disabled when it's not set."
+	echo "F --- For testing Fail case 403/500/200/0/9 (200:200ok invalid, 0:empty_rule 9:no_response)."
+	echo "f --- For forcing generating new server certificate (enable this when A option is specified)."
+	echo "x --- For testing Flet's Cross mode which disables RA packet sending (AdvSendAdvert is set to off). Disabled when it's not set."
+	echo "t --- For enabling routing to External Network and changing interface addresses. Disabled when it's not set."
+	echo "r --- For enabling handover a DHCPv6 relases file."
+}
+
+
+
+4) To stop the test server, do "sudo ./stop.sh".
+-- To restore the system network state, do "sudo ./restore.sh".
+-- To reboot only http server, do "sudo ./reboot_lighttpd.sh". (For testing MAP-E behavior in case of several response code sent from MAP-rule server.)
+-- To kill only http server, do "sudo killall lighttpd". (For testing MAP-E behavior in case of MAP-rule server stopped.)
+
+
+
+
+

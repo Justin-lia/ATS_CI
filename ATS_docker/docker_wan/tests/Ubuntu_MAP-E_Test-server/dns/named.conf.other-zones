@@ -1,0 +1,65 @@
+
+zone "aimremotev6.aterm.jp" {
+	type master;
+	file "aimremotev6.aterm.jp.hosts";
+};
+
+//zone "aimremote2.aterm.jp" {
+//	type master;
+//	file "aimremote2.aterm.jp.hosts";
+//};
+
+zone "www.aterm.jp" {
+	type master;
+	file "www.aterm.jp.hosts";
+};
+
+zone "firmwarev6.aterm.jp" {
+	type master;
+	file "firmwarev6.aterm.jp.hosts";
+};
+
+zone "www.elecom.co.jp" {
+	type master;
+	file "www.elecom.co.jp.hosts";
+};
+
+zone "www.msftconnecttest.com" {
+	type master;
+	file "www.msftconnecttest.com.hosts";
+};
+
+zone "dns.msftncsi.com" {
+	type master;
+	file "dns.msftncsi.com.hosts";
+};
+
+zone "ipv6.msftconnecttest.com" {
+	type master;
+	file "ipv6.msftconnecttest.com.hosts";
+};
+
+zone "iosupdate61.iodata.jp" {
+	type master;
+	file "iosupdate61.iodata.jp.hosts";
+};
+
+zone "iosupdate1.iodata.jp" {
+	type master;
+	file "iosupdate1.iodata.jp.hosts";
+};
+
+zone "tepco.co.jp" {
+	type master;
+	file "tepco.co.jp.hosts";
+};
+
+zone "route-info.flets-west.jp" {
+	type master;
+	file "route-info.flets-west.jp.hosts";
+};
+
+zone "ipv4.happy-wifi-life.com" {
+	type master;
+	file "ipv4.happy-wifi-life.com.hosts";
+};

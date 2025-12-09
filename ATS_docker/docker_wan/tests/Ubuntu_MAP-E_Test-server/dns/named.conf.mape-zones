@@ -1,0 +1,10 @@
+
+zone "api.enabler.ne.jp" {
+	type master;
+	file "api.enabler.ne.jp.hosts";
+};
+
+zone "rule.map.ocn.ad.jp" {
+	type master;
+	file "rule.map.ocn.ad.jp.hosts";
+};

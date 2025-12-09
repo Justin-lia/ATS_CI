@@ -1,0 +1,10 @@
+
+zone "v6connect.net" {
+	type master;
+	file "v6connect.net.hosts";
+};
+
+zone "4over6.info" {
+	type master;
+	file "4over6.info.hosts";
+};

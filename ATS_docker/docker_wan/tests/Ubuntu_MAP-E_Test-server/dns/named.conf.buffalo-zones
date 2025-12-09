@@ -1,0 +1,25 @@
+
+zone "product.buffalo.jp" {
+	type master;
+	file "product.buffalo.jp.hosts";
+};
+
+zone "p.buffalo.jp" {
+	type master;
+	file "p.buffalo.jp.hosts";
+};
+
+zone "d.buffalo.jp" {
+	type master;
+	file "d.buffalo.jp.hosts";
+};
+
+zone "driver.buffalo.jp" {
+	type master;
+	file "driver.buffalo.jp.hosts";
+};
+
+zone "buffalo.jp" {
+	type master;
+	file "buffalo.jp.hosts";
+};

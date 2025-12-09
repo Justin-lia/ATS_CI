@@ -1,0 +1,12 @@
+$TTL 86400
+@	IN	SOA	route-info.flets-west.jp.	route-info.flets-west.jp. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	route-info.flets-west.jp.
+
+@		IN	AAAA	<SrvIPv6>
+

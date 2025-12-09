@@ -1,0 +1,13 @@
+$TTL 86400
+@	IN	SOA	dummy.domain.	dummy.domain. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	dummy.domain.
+
+@		IN	A	<SrvIPv4>
+@		IN	AAAA	<SrvIPv6>
+

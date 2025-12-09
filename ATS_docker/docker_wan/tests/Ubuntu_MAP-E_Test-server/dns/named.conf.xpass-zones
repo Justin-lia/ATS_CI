@@ -1,0 +1,10 @@
+
+zone "dgw.xpass.jp" {
+	type master;
+	file "dgw.xpass.jp.hosts";
+};
+
+zone "setup.xpass.jp" {
+	type master;
+	file "setup.xpass.jp.hosts";
+};

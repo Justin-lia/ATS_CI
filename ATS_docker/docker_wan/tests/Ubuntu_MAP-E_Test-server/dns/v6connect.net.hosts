@@ -1,0 +1,17 @@
+$TTL 86400
+@	IN	SOA	v6connect.net.	v6connect.net. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	v6connect.net.
+
+@		IN	AAAA	<SrvIPv6>
+prod		IN	AAAA	<SrvIPv6>
+dslite		IN	AAAA	<SrvIPv6>
+v6mig		IN	AAAA	<SrvIPv6>
+prod.v6mig	IN	AAAA	<SrvIPv6>
+redirect.v6mig	IN	AAAA	<SrvIPv6>
+

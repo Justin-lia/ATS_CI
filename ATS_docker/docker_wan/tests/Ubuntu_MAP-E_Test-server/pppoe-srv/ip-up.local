@@ -1,0 +1,3 @@
+#!/bin/sh -e
+  
+ip route add $PPP_REMOTE dev $PPP_IFACE

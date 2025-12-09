@@ -1,0 +1,10 @@
+
+zone "gw.transix.jp" {
+	type master;
+	file "gw.transix.jp.hosts";
+};
+
+zone "setup.transix.jp" {
+	type master;
+	file "setup.transix.jp.hosts";
+};

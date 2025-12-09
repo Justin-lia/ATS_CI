@@ -1,0 +1,19 @@
+[ req ]
+prompt=	no
+distinguished_name=ca_dn
+x509_extensions=cert_v3
+
+[ ca_dn ]
+C=	JP
+ST=	Some-State
+O=	Some-Company
+CN=	prod.v6mig.v6connect.net
+
+[ cert_v3 ]
+#authorityKeyIdentifier=keyid,issuer
+#basicConstraints=	CA:FALSE
+#keyUsage=		digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment
+#subjectAltName=@alt_names
+[ alt_names ]
+DNS.1=	redirect.v6mig.v6connect.net
+#DNS.2=	<StdProvServFqdn_DNS2>

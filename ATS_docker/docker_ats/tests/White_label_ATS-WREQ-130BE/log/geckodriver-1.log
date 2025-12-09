@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘/run/user/0’: Permission denied
+1762413550827	geckodriver	INFO	Listening on 127.0.0.1:33705

@@ -1,0 +1,16 @@
+$TTL 86400
+@	IN	SOA	rakuten.jp.	rakuten.jp. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	rakuten.jp.
+
+@		IN	AAAA	<SrvIPv6>
+isp		IN	AAAA	<SrvIPv6>
+gw.isp		IN	AAAA	<SrvIPv6> ;for dslite
+prov.isp	IN	AAAA	<SrvIPv6> ;for provisioning
+redirect.isp	IN	AAAA	<SrvIPv6>
+

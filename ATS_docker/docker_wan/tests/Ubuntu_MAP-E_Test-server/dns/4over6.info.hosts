@@ -1,0 +1,15 @@
+$TTL 86400
+@	IN	SOA	4over6.info.	4over6.info. (
+	2000122401
+	10800
+	3600
+	604800
+	86400 )
+
+	IN	NS	4over6.info.
+
+@		IN	AAAA	<SrvIPv6>
+@		IN	TXT	"<4over6info>"
+;@		IN	TXT	"v=v6mig-1 url=http://prod.v6mig.v6connect.net/cpe/v1/config t=b"
+;@		IN	TXT	"v=v6mig-1 url= t=b"
+

@@ -1,0 +1,21 @@
+1762516527238	geckodriver	INFO	Listening on 127.0.0.1:49493
+1762516527250	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/root/.cache/selenium/ ... te" "--remote-debugging-port" "35939" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile6EgueF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: ManageChildProcess failed
+
+[GFX1-]: glxtest: libpci missing
+[GFX1-]: glxtest: X error, error_code=10, request_code=150, minor_code=5
+1762516527860	Marionette	INFO	Marionette enabled
+1762516527968	Marionette	INFO	Listening on port 35079
+WebDriver BiDi listening on ws://127.0.0.1:35939
+[Parent 1817, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /builds/worker/checkouts/gecko/toolkit/xre/nsSigHandlers.cpp:201
+
+** (firefox:1817): WARNING **: 11:55:27.991: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 35079
+1762516528106	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1762516529867	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://192.168.1.1."
+JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 108: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]

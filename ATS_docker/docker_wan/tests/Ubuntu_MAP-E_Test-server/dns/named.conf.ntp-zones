@@ -1,0 +1,15 @@
+
+zone "ntp.jst.mfeed.ad.jp" {
+	type master;
+	file "ntp.jst.mfeed.ad.jp.hosts";
+};
+
+zone "ntp1.v6.mfeed.ad.jp" {
+	type master;
+	file "ntp1.v6.mfeed.ad.jp.hosts";
+};
+
+zone "ntp.nict.jp" {
+	type master;
+	file "ntp.nict.jp.hosts";
+};

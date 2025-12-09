@@ -1,0 +1,10 @@
+
+zone "rakuten.jp" {
+	type master;
+	file "rakuten.jp.hosts";
+};
+
+zone "4over6.info" {
+	type master;
+	file "4over6.info.hosts";
+};
