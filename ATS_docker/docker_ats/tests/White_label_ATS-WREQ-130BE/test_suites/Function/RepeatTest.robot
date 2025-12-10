@@ -2,82 +2,20 @@
 Resource    ../base.robot
 Library    OperatingSystem
 Force Tags    @Function=Somke_Test    @AUTHOR=Frank_Hung    @FEATURE=Function
-Resource    ../../keyword/kw_Basic_WAN_FrankHung.robot
-Resource    ../../keyword/kw_Application_FrankHung.robot
-Resource    ../../keyword/kw_Basic_WiFi_FrankHung.robot
-Resource    ../../keyword/kw_Basic_NAT_FrankHung.robot
-#Resource    ../../keyword/kw_basic_LAN_FrankHung.robot
-#Suite Setup    Open Web GUI    ${URL}
-#Suite Setup    Open Web GUI and Reboot Wifi_Client    ${URL}
-#Suite Setup    Open Web GUI and Reset to Default    ${URL}    ${DUT_Password}
-#Suite Teardown    Login and Reset Default DUT        ${URL}    ${DUT_Password}
+Resource    ../../keyword/kw_Basic_WAN.robot
+Resource    ../../keyword/kw_Application.robot
+Resource    ../../keyword/kw_Basic_WiFi.robot
+Resource    ../../keyword/kw_Basic_NAT.robot
 
 *** Variables ***
 
 *** Test Cases ***
-#Reboot Wifi_Client
-#    [Tags]    @AUTHOR=Frank_Hung
-#    Reboot Wifi_Client_1 and Wifi_Client_2
-
-#Detect GUI with Model Name
-#    [Tags]
-#    ${gui_type}     run keyword and return status    Page Should Contain Text    WSR-1166DHP
-#    ${gui_type}    Convert to String    ${gui_type}
-#    Should Contain    ${gui_type}    True
-
-#Reboot from Consloe
-#    [Tags]    @AUTHOR=Frank_Hung
-#    Reboot DUT from Console
-
-
-
 
 Repeat Test Case
     [Tags]    @AUTHOR=Frank_Hung    testing2
     Repeat Keyword    9000 times    Send Traffic from LAN PC to WAN PC
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ***comment***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 *** Keywords ***
 Send Traffic from LAN PC to WAN PC
@@ -88,13 +26,10 @@ Send Traffic from LAN PC to WAN PC
     Waiting 180 seconds
     Waiting 10 seconds for log to Console
 
-
-
 WiFi Connection Test 2.4GHz
     Login and Reset Default DUT        ${URL}    ${DUT_Password}
     Change WiFi 2.4GHz SSID to "0123456789_2G_xxxx" and click "Save"    ${ssid_2G_1}    ${wifi_password}
     Verify Wireless PC can connect to DUT and access to Internet    ${ssid_2G_1}    ${wifi_password}
-
 
 Power-off than Power-on DUT
     Power OFF than Power ON DUT
@@ -122,14 +57,6 @@ FN23WN012 When WAN is DHCP, verify optional setting, MTU Size of Internet Port
 FN23WN011 Verify when WAN is static IP with munually set Address of Secondary DNS Name Server
     [Tags]    @AUTHOR=Frank_Hung
     Setup WAN mode to Static IP mode, incorrect IP in DNS1 and correct IP in DNS2
-
-
-##Case.FN23PS001 L2TP pass-through
-##    [Tags]    @AUTHOR=Frank_Hung
-##    Enable L2TP passthrough on DUT
-##    Change WiFi 5GHz SSID to "0123456789_5G_xxxx", Security to WPA2-PSK    ${ssid_5G_1}    ${wifi_password_64}
-    #Verify Wireless PC can connect to DUT and access to Internet    ${ssid_5G_1}    ${wifi_password_64}
-    #Verify Wirelss PC can Create a L2TP Connection
 
 Case.FN23PS001 L2TP pass-through
     [Tags]    @AUTHOR=Frank_Hung

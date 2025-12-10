@@ -3,36 +3,7 @@ Library    Telnet
 Library    SSHLibrary
 Library    String
 
-
-
 *** Variables ***
-
-
-#*** Test Cases ***
-#Sample
-#    [Tags]    testing2
-#    ${result_1}=    cli    terminal_server    help
-#    log     ${result_1}
-#    ${result_2}=    cli    VM2    ping 8.8.8.8 -c 4    prompt=vagra    timeout=20
-#    log    ${result_2}
-
-
-#Sample2
-#    [Tags]
-#    ${result_2}=    cli    VM2    ping 8.8.8.8 -c 4    prompt=100%
-#    log    ${result_2}
-
-#    ${ver1}=    Set Variable    ${DEVICES.VM2_Console.IP_Address}
-#    log    ${ver1}
-
-#Sample3
-#    [Tags]
-#    Clear Cisco Router Port    39
-
-
-
-
-
 
 *** Keywords ***
 Reference v6 Server setup, M bit 1
@@ -107,21 +78,6 @@ Reference Clear cisco port
 
 
 
-
-
-
-
-#    cli    terminal_server    ${cisco_line}
-#    ${sys_state}    cli    terminal_server    systat
-#    cli    terminal_server    enable    prompt=Password:
-#    cli    terminal_server    lab    prompt=ATS-TERMSERV#
-#    cli    terminal_server    clear line ${cisco_line}    prompt=[confirm]
-#    cli    terminal_server    y    prompt=ATS-TERMSERV#
-#    Run keyword and ignore error    cli    terminal_server    exit    timeout=5
-
-
-
-
 cli
     [Arguments]    ${Device}    ${Command}    @{other_agrs}
     log    ${other_agrs}
@@ -141,20 +97,6 @@ cli
 
 cli_serial
     [Arguments]    ${Device}    ${Command}    ${timeout}    ${prompt}
-#    ${result}=    Run    echo 'vagrant' | sudo -S pkill -f /dev/ttyUSB0
-#    ${result}=    Run    echo 'vagrant' | sudo -S pkill -f /dev/ttyUSB0
-#    sleep    4
-
-
-
-
-
-
-
-
-
-
-
     pyserial.open_serial_connection    port=${DEVICES.${Device}.comPort}    boud=${DEVICES.${Device}.baud_num}
     log    ${Command}
     ${result}=    pyserial.command_enter    \n
@@ -181,8 +123,6 @@ cli_ssh
     SSHLibrary.Close All Connections
     [Return]    ${result}
 
-
-
 cli_telnet
     [Arguments]    ${Device}    ${Command}    ${timeout}    ${prompt}
     Telnet.Open Connection    ${DEVICES.${Device}.ip}    timeout=60    prompt=${DEVICES.${Device}.prompt}     port=${DEVICES.${Device}.port}
@@ -200,7 +140,6 @@ cli_telnet
     sleep    2
     ${result_2}=    Telnet.Read
     ${result} =   Catenate    ${result}   ${result_2}
-#    ${result}=    Telnet.Execute Command    ${Command}
     log    ${result}
     Telnet.Close Connection
     [Return]    ${result}

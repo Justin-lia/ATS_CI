@@ -28,15 +28,6 @@ Verify LAN PC and Wireless PC can be Rename from Tagret Devices on GUI
     Select From List By Label    id=restrict_internet_access    Wireless_PC_Edited
     Close Browser
 
-
-
-
-
-
-
-
-
-
 Add LAN PC and Wireless PC to Target Devices on GUI
     [Arguments]    ${LAN_PC_MAC}    ${Wireless_PC_MAC}
     Select From List By Value    id=dev_list    ${LAN_PC_MAC}
@@ -63,8 +54,6 @@ Verify LAN PC and Wireless PC can be Remove from Tagret Devices on GUI
     Should Not Contain    ${result}    ${LAN_PC_MAC}
     Should Not Contain    ${result}    ${Wireless_PC_MAC}
 
-
-
 Verify DUT can discover LAN PC and Wireless PC on Parental Control GUI
     [Arguments]    ${LAN_PC_MAC}    ${Wireless_PC_MAC}
     Login GUI    ${URL}    ${DUT_Password}
@@ -79,13 +68,9 @@ Verify DUT can discover LAN PC and Wireless PC on Parental Control GUI
     Select From List By Value    id=dev_list    ${Wireless_PC_MAC}
     sleep    1
 
-
-
-
 Setting DUT WiFi interface MAC from console
     Run    echo "vagrant" | sudo -S chmod 777 /dev/ttyUSB0
     cli    DUT_serial_port    uci set wireless.wifi0.macaddr='${WPS_bssid_2G}' && uci commit && wifi    prompt=#
     sleep    240
     cli    DUT_serial_port    uci set wireless.wifi1.macaddr='${WPS_bssid_5G}' && uci commit && wifi    prompt=#
     sleep    240
-

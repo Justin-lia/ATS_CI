@@ -21,8 +21,6 @@ ${Agent_Interface_on_cisco_switch}    GigabitEthernet 1/0/14
 ${DUT_WAN_Interface_on_cisco_switch}    GigabitEthernet 1/0/3
 ${Platform}    'SPF13'
 
-
-
 #-----------------------------WiFi
 ${WPS_bssid_2G}    A8:C2:46:32:E3:4F
 ${WPS_bssid_5G}    A8:C2:46:32:E3:50
@@ -38,12 +36,8 @@ ${Path_for_Old_FW}    /home/vagrant/Downloads/FW/WREQ-130BE.v2-v1.0.02.024.bin
 ${other_Linksys_model_FW}    /home/vagrant/Downloads/FW/wrongFW/WSR-1166DHP3_v116r1722_CRC_fw_JP.bin
 ${other_regions_FW}    /home/vagrant/Downloads/FW/WSR-1166DHP3_v116r1722_CRC_fw_JP.bin
 ${Config_File_for_FW_Update}    ap_dhp4.txt
-
-
-
 ${Path_for_FW_Downgrade}    /home/vagrant/Downloads/FW/WREQ-130BE.v2-v1.0.02.024.bin
 ${Expect_FW_Version_Downgrade}    1.0.02.024
-
 
 #-----------------------------TestLink
 ${testlink_url}    http://10.5.88.108/lib/api/xmlrpc/v1/xmlrpc.php
@@ -51,7 +45,5 @@ ${testlink_key}    7ae4930802e9801e5887351c6d8d8700
 ${platformname}    WREQ-130BE
 ${testplanid}    39
 ${buildname}    Build 0.0.1
-
-
 
 #-----------------------------------------------
