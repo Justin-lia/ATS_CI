@@ -7,15 +7,18 @@ services:
     privileged: true
     networks:
       lan_net_dut_lan:    
+        mac_address: ${env_lan_lan_mac}              
       lan_net:
         ipv4_address: 192.168.100.20
+        mac_address: ${env_lan_back_mac}
     tty: true
     environment:
       - DISPLAY=:99
     volumes:
       - ./tests:/workspace/tests
       - ~/.ssh:/root/.ssh
-      
+    entrypoint: ["/workspace/tests/fix_interface_name_lan.sh"]
+    command: ["/bin/bash"]
 networks:
   lan_net:
     external: true

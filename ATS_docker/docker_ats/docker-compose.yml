@@ -8,16 +8,21 @@ services:
     networks:
       ats_net:
         ipv4_address: 192.168.100.10
+        mac_address: ${env_ats_back_mac}
       ats_net_dut_lan:
         ipv4_address: 192.168.1.2
+        mac_address: ${env_ats_lan_mac}
       ats_net_internet:
+        mac_address: ${env_ats_inet_mac}
     tty: true
     environment:
       - DISPLAY=:99
     volumes:
       - ./tests:/workspace/tests
       - ~/.ssh:/root/.ssh
-      
+    entrypoint: ["/workspace/tests/fix_interface_name_ats.sh"]
+    command: ["/bin/bash"]
+
 networks:
   ats_net:
     external: true

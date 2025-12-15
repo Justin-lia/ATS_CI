@@ -8,14 +8,18 @@ services:
     init: true
     networks:
       wan_net_dut_wan:
+        mac_address: ${env_wan_wan_mac}
       wan_net:
         ipv4_address: 192.168.100.30
+        mac_address: ${env_wan_back_mac}
     tty: true
     volumes:
       - ./tests:/workspace/tests
       - ~/.ssh:/root/.ssh
       - /lib/modules:/lib/modules:ro
-    command: ["sh", "-c", "ntpd -n & tail -f /dev/null"]
+    entrypoint: ["/workspace/tests/fix_interface_name_wan.sh"]
+    command: ["sh", "-c", "ntpd -n & /bin/bash"]
+
 networks:
   wan_net:
     external: true
