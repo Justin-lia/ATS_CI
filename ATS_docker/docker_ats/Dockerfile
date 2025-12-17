@@ -68,6 +68,7 @@ RUN apt update && apt install -y \
     iputils-ping \
     tshark \
     python3-serial \
+	telnet \
     isc-dhcp-client \ 
 	&&\
     # 清理暫存檔
@@ -90,7 +91,11 @@ RUN pip3 install --no-cache-dir --break-system-packages \
     robotframework-jsonlibrary \
     robotframework-requests \
     robotframework-seriallibrary \
-    pyserial
+    pyserial \
+	pyyaml \
+	TestLink-API-Python-client
+	#TestlinkApiClient
+	
 
 # 設定虛擬顯示
 ENV DISPLAY=:99

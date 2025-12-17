@@ -1,6 +1,3 @@
-# ============================
-# Robot Framework (Chrome + SSH)
-# ============================
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,7 +8,7 @@ RUN apt update && apt install -y \
     python3 python3-pip \
     curl unzip wget gnupg \
     xvfb \
-    ssh \
+    openssh-server openssh-client ssh \
     git \
     fonts-liberation \
     net-tools \
@@ -20,47 +17,25 @@ RUN apt update && apt install -y \
     tshark \
     python3-serial \
     isc-dhcp-client \
-    firefox \
-    && \
-    # 安裝 Google Chrome
-    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - && \
-    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list && \
-    apt update && apt install -y google-chrome-stable && \
-    # 安裝 ChromeDriver（自動匹配 Chrome 版本）
-    CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d'.' -f1) && \
-    DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_${CHROME_VERSION}") && \
-    wget -q "https://storage.googleapis.com/chrome-for-testing-public/${DRIVER_VERSION}/linux64/chromedriver-linux64.zip" && \
-    #wget -q "https://storage.googleapis.com/chrome-for-testing-public/142.0.7444.175/linux64/chromedriver-linux64.zip" && \
-    unzip chromedriver-linux64.zip -d /usr/local/bin && \
-    mv /usr/local/bin/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
-    chmod +x /usr/local/bin/chromedriver && \
-    # 清理暫存檔
-    apt autoremove -y && \
-    apt clean && \
-    rm -rf \
-        /var/lib/apt/lists/* \
-        /tmp/* \
-        /var/tmp/* \
-        chromedriver-linux64.zip \
-        /usr/local/bin/chromedriver-linux64 \
-        /root/.cache \
-        /var/cache/apt/*
+	telnetd openbsd-inetd telnetd\	
+    firefox && \
+    rm -rf /var/lib/apt/lists/*
 
-# 安裝 Robot Framework 與相關 Library（單獨一層以便快取）
-RUN pip3 install --no-cache-dir --break-system-packages \
-    robotframework \
-    robotframework-seleniumlibrary \
-    robotframework-sshlibrary \
-    robotframework-pabot \
-    robotframework-jsonlibrary \
-    robotframework-requests \
-    robotframework-seriallibrary \
-    pyserial
+RUN echo "root:password" | chpasswd
+RUN echo "telnet stream tcp nowait root /usr/sbin/tcpd /usr/sbin/telnetd" >> /etc/inetd.conf
+# 設定 SSH 服務（最簡化版本）
+RUN mkdir -p /var/run/sshd && \
+    echo 'root:password' | chpasswd && \
+    # 允許 root 用密碼登入
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    # 啟用密碼認證
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
+    # 禁用金鑰認證（確保只能用密碼）
+    sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication no/' /etc/ssh/sshd_config && \
+    # 確保 UsePAM 是開啟的（用於密碼認證）
+    sed -i 's/UsePAM no/UsePAM yes/' /etc/ssh/sshd_config
 
-# 設定虛擬顯示
-ENV DISPLAY=:99
+# 暴露 SSH 端口
+EXPOSE 22
+EXPOSE 23
 
-# 啟動 Xvfb 並保持容器開啟
-CMD Xvfb :99 -screen 0 1280x1024x24 & \
-    sleep 2 && \
-    bash

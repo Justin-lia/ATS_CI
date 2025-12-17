@@ -3,31 +3,34 @@ Force Tags    @Function=Somke_Test    @AUTHOR=Frank_Hung    @FEATURE=Function
 Resource    ../base.robot
 Resource    ../../keyword/kw_basic_LAN.robot
 Resource    ../../keyword/Variable.robot
-Resource    ../../keyword/kw_testlink.robot
 Library           Collections
 Library           DateTime
 Library           String
 Library           OperatingSystem
+#Variables		Myvariable.yaml
 Suite Teardown    Telnet.Close All Connections
 
 *** Test Cases ***
 
 Reset DUT
     [Tags]    @AUTHOR=Frank_Hung    rebootTag
+	#open browser	192.168.1.1
     Login and Reset Default DUT        ${URL}    ${DUT_Password}
     Get DUT WAN IP
 
 G-CPE-7 : Verify default setting of DHCP server
-    [Tags]    @AUTHOR=Frank_Hung
+    [Tags]    @AUTHOR=Frank_Hung	gcpe7
     Verify LAN PC can get ip from DUT
     Verify LAN PC can access WebGUI
-    [Teardown]    upload result to testlink    G-CPE-7
+#    [Teardown]    upload result to testlink    G-CPE-7
 
 G-CPE-617 : Verify LAN IP change to 192.168.0.0/16
     [Tags]    @AUTHOR=Frank_Hung    testing2
     Change DUT LAN IP adddress and subnet mask config 192.168.0.1/255.255.0.0
     Verify LAN IP change to 192.168.0.0/16
     sleep    1
+
+***Keywords***
 
 G-CPE-618 : Verify LAN IP change to 172.56.0.0/16
     [Tags]    @AUTHOR=Frank_Hung    blockTag
@@ -88,7 +91,7 @@ G-CPE-623 : Clients Already Reserved
     Add an IP 192.168.1.201 to DHCP Reservation, verify GUI show error message
     [Teardown]    upload result to testlink    G-CPE-623
 
-***Keywords***
+
 upload result to testlink and Change DUT LAN IP to Default from GUI
     [Arguments]    ${network_segment}    ${testCaseID}
     upload result to testlink    ${testCaseID}

@@ -146,18 +146,18 @@ DEVICES:
     prompt: Password OK
 
   lanhost:
-   ip: 192.168.100.20
+   ip: 172.16.0.52
    timeout: 60
    type: linux
    protocol: telnet
    port: 23
-   user_name: root
-   password: password
+   user_name: vagrant
+   password: vagrant
    login_prompt: login
    password_prompt: Password
-   root_password: password
-   prompt: root@dockerimage-lan
-   interface: eth-lan
+   root_password: '123456'
+   prompt: vagrant@lanhost
+   interface: enp6s0
 
   wanhost:
     ip: 172.16.0.71

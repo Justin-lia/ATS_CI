@@ -1,0 +1,2 @@
+function_name="113be"
+robot -i gcpe7 --output report/$function_name/output_mesh.xml --log report/$function_name/log_mesh.html --report report/$function_name/report_mesh.html test_suites/Function/Basic_LAN.robot

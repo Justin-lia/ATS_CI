@@ -1,9 +1,9 @@
-version: '3'
 services:
   robot:
     build: .
     image: env-ats:v1
     container_name: env-ats
+    hostname: dockerimage-ats
     privileged: true
     networks:
       ats_net:
@@ -21,7 +21,8 @@ services:
       - ./tests:/workspace/tests
       - ~/.ssh:/root/.ssh
     entrypoint: ["/workspace/tests/fix_interface_name_ats.sh"]
-    command: ["/bin/bash"]
+    command: ["sh", "-c", "Xvfb :99 -screen 0 1280x1024x24 & x11vnc -display :99 -forever -shared -rfbport 5900 & /bin/bash"]
+    #command: ["/bin/bash"]
 
 networks:
   ats_net:

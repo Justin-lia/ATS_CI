@@ -14,17 +14,17 @@ retry Get DUT WAN IP
     sleep    1
     Close Browser
     Should Not Contain    ${result}    0.0.0.0
-    [Return]    ${result}
+    [RETURN]    ${result}
 
 Verify LAN PC can access WebGUI
-    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | sudo -S wget http://192.168.1.1    prompt=vagrant@lanhost    timeout=60
+    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | wget http://192.168.1.1    prompt=root@dockerimage-lan:~#    timeout=60
     sleep    2
     Should Contain    ${result}    200 OK
 
 Verify LAN PC can get ip from DUT
-    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | sudo -S dhclient ${DEVICES.lanhost.interface} -r    prompt=vagrant@lanhost    timeout=60
+    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | dhclient ${DEVICES.lanhost.interface} -r    prompt=root@dockerimage-lan:~#    timeout=60
     sleep    4
-    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | sudo -S dhclient ${DEVICES.lanhost.interface}    prompt=vagrant@lanhost    timeout=90
+    ${result}=    cli   lanhost    echo '${DEVICES.lanhost.password}' | dhclient ${DEVICES.lanhost.interface}    prompt=vagrant@lanhost    timeout=90
     sleep    15
     ${lanhost_IP}=    Get IP from host    lanhost
     Should Contain    ${lanhost_IP}    192.168.1.
@@ -83,14 +83,14 @@ Get IP from host
     ${getIP}=    cli    ${host}    ifconfig ${DEVICES.${host}.interface} | grep "inet"
     @{getIP}=    Get Regexp Matches    ${getIP}    (\\d+\\.){3}\\d+
     ${getIP}=    Strip String    ${getIP}[0]
-    [Return]    ${getIP}
+    [RETURN]    ${getIP}
 
 get MAC from host
     [Arguments]    ${host}
     ${getMAC}=    cli    ${host}    ifconfig ${DEVICES.${host}.interface} | grep "ether"
     @{getMAC}=    Get Regexp Matches    ${getMAC}    (?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2})
     ${getMAC}=    Strip String    ${getMAC}[0]
-    [Return]    ${getMAC}
+    [RETURN]    ${getMAC}
 
 On Basic Setup > LAN Page, click "DHCP Reservation" button, Enter Client Name, Assign IP Address, To This MAC Address and click "Add" button in Manually Add Client
     Login GUI    ${URL}    ${DUT_Password}
@@ -853,27 +853,47 @@ Login and Reset Default DUT
 retry Login and Reset Default DUT
     [Tags]    @AUTHOR=Frank_Hung
     [Arguments]    ${URL}    ${DUT_Password}
-    IF    ${Platform}=='SPF12'
-        sleep    1
-    ELSE IF    ${Platform}=='SPF13'
-        Run    echo "vagrant" | sudo -S chmod 777 /dev/ttyUSB0
-        ${result}=    cli    DUT_serial_port    rm /opt/feature/GUI-QUICKSETUP-ENABLED && /etc/init.d/device-ui restart    prompt=root@
-        sleep    1
-        log    ${result}
-    END
+#    IF    ${Platform}=='SPF12'
+#        sleep    1
+#    ELSE IF    ${Platform}=='SPF13'
+#        Run    echo "vagrant" | sudo -S chmod 777 /dev/ttyUSB0
+#        ${result}=    cli    DUT_serial_port    rm /opt/feature/GUI-QUICKSETUP-ENABLED && /etc/init.d/device-ui restart    prompt=root@
+#        sleep    1
+#        log    ${result}
+#    END
     Login GUI    ${URL}    ${DUT_Password}
     Reset Default DUT
-    IF    ${Platform}=='SPF12'
-        sleep    1
-    ELSE IF    ${Platform}=='SPF13'
-        Wizard-Setup
-    END
+#    IF    ${Platform}=='SPF12'
+#        sleep    1
+#    ELSE IF    ${Platform}=='SPF13'
+#        Wizard-Setup
+#    END
 
 
 Reset Default DUT
     [Tags]    @AUTHOR=Frank_Hung
-    Go to Reset to Default Page
-    Reset to Default DUT
+    log		Go to Reset to Default Page		INFO
+    click element    id=menu_management
+    sleep    2
+    click element    id=menu_management_settings
+    sleep    2
+	
+    log		Reset to Default DUT	INFO
+    click element    id=lang_restore_btn
+    sleep    2
+    click element    id=confirm_dialog_confirmed
+    sleep    300
+    Reload Page
+    Wait until element is visible    id=acnt_passwd    timeout=60
+    sleep    2
+    close browser
+    sleep    2
+    Open Web GUI    ${URL}
+    sleep    5
+    input_text    id=acnt_passwd    ${DUT_Password}
+    sleep    1
+    close browser
+
 
 Go to Reset to Default Page
     click element    id=menu_management

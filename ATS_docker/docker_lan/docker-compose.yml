@@ -1,9 +1,9 @@
-version: '3'
 services:
   robot:
     build: .
     image: env-lan:v1
     container_name: env-lan
+    hostname: dockerimage-lan
     privileged: true
     networks:
       lan_net_dut_lan:    
@@ -18,7 +18,10 @@ services:
       - ./tests:/workspace/tests
       - ~/.ssh:/root/.ssh
     entrypoint: ["/workspace/tests/fix_interface_name_lan.sh"]
-    command: ["/bin/bash"]
+    #command: ["sh", "-c", "ntpd -n & /bin/bash"]      
+    command: ["sh", "-c", "/usr/sbin/inetd & exec /usr/sbin/sshd -D & /bin/bash"]
+    #command: ["sh", "-c", "exec /usr/sbin/sshd -D & /bin/bash"]
+    
 networks:
   lan_net:
     external: true

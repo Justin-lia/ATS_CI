@@ -1,9 +1,9 @@
-version: '3'
 services:
   robot:
     build: .
     image: env-wan:v1
     container_name: env-wan
+    hostname: dockerimage-wan
     privileged: true
     init: true
     networks:
@@ -18,7 +18,8 @@ services:
       - ~/.ssh:/root/.ssh
       - /lib/modules:/lib/modules:ro
     entrypoint: ["/workspace/tests/fix_interface_name_wan.sh"]
-    command: ["sh", "-c", "ntpd -n & /bin/bash"]
+    #command: ["sh", "-c", "ntpd -n & /bin/bash"]
+    command: ["sh", "-c", "/usr/sbin/inetd & ntpd -n & exec /usr/sbin/sshd -D &  /bin/bash"]
 
 networks:
   wan_net:

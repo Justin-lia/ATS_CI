@@ -1,7 +1,7 @@
 *** Variables ***
-${URL}      http://${LAN_IP}/
 ${URL_Extender}    http://192.168.100.100/
 ${LAN_IP}    192.168.1.1
+${URL}      http://${LAN_IP}/
 ${LAN_Netmask}    255.255.255.0
 ${DUT_Password}    admin
 ${Product_Name}    WREQ-130BE

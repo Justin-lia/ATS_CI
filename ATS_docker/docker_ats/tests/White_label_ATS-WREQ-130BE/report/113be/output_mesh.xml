@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4 (Python 3.12.3 on linux)" generated="2025-12-17T01:33:27.653973" rpa="false" schemaversion="5">
+<suite id="s1" name="Basic LAN" source="/workspace/tests/White_label_ATS-WREQ-130BE/test_suites/Function/Basic_LAN.robot">
+<test id="s1-t1" name="G-CPE-7 : Verify default setting of DHCP server" line="21">
+<kw name="Verify LAN PC can get ip from DUT" owner="kw_basic_LAN">
+<kw name="cli" owner="telnet_ssh_sample">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:27.987274" level="INFO">['prompt=root@dockerimage-lan:~#', 'timeout=60']</msg>
+<arg>${other_agrs}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.986999" elapsed="0.000339"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-12-17T01:33:27.987768" level="INFO">${other_agrs} = ['prompt=root@dockerimage-lan:~#', 'timeout=60']</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.987479" elapsed="0.000320"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:33:27.988170" level="INFO">${other_agrs} = 'prompt=root@dockerimage-lan:~#', 'timeout=60'</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<arg>[</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.987964" elapsed="0.000233"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:33:27.988494" level="INFO">${prompt_arg} = root@dockerimage-lan:~#', 'timeout=60'</msg>
+<var>${prompt_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>prompt=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.988311" elapsed="0.000209"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:33:27.988802" level="INFO">${prompt_arg} = root@dockerimage-lan:~#</msg>
+<var>${prompt_arg}</var>
+<arg>${prompt_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.988630" elapsed="0.000199"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:33:27.989155" level="INFO">${timeout_arg} = 60'</msg>
+<var>${timeout_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>timeout=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.988981" elapsed="0.000199"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:33:27.989487" level="INFO">${timeout_arg} = 60</msg>
+<var>${timeout_arg}</var>
+<arg>${timeout_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.989290" elapsed="0.000236"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="cli_telnet" owner="telnet_ssh_sample">
+<kw name="Open Connection" owner="Telnet">
+<msg time="2025-12-17T01:33:27.992522" level="INFO">Opening connection to 192.168.100.20:23 with prompt: root@dockerimage-lan</msg>
+<arg>${DEVICES.${Device}.ip}</arg>
+<arg>timeout=60</arg>
+<arg>prompt=${DEVICES.${Device}.prompt}</arg>
+<arg>port=${DEVICES.${Device}.port}</arg>
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.991076" elapsed="0.003047"/>
+</kw>
+<kw name="Login" owner="Telnet">
+<msg time="2025-12-17T01:33:28.145542" level="INFO">Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+root@dockerimage-lan</msg>
+<msg time="2025-12-17T01:33:28.145679" level="INFO">${login_result} = 
+Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ub...</msg>
+<var>${login_result}</var>
+<arg>${DEVICES.${Device}.user_name}</arg>
+<arg>${DEVICES.${Device}.password}</arg>
+<arg>login_prompt=${DEVICES.${Device}.login_prompt}</arg>
+<arg>password_prompt=${DEVICES.${Device}.password_prompt}</arg>
+<doc>Logs in to the Telnet server with the given user information.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.994315" elapsed="0.151394"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${timeout}'==''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${DEVICES.${Device}.timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.145971" elapsed="0.000361"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Timeout" owner="Telnet">
+<arg>${timeout}</arg>
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.146824" elapsed="0.000226"/>
+</kw>
+<arg>'${timeout}'!=''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.146472" elapsed="0.000639"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:33:28.147329" level="INFO">:~#</msg>
+<msg time="2025-12-17T01:33:28.147405" level="INFO">${result} = :~# </msg>
+<var>${result}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.147226" elapsed="0.000205"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:28.147778" level="INFO">60</msg>
+<arg>${timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.147555" elapsed="0.000266"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:28.148204" level="INFO">root@dockerimage-lan:~#</msg>
+<arg>${prompt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.147996" elapsed="0.000252"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Prompt" owner="Telnet">
+<arg>${prompt}</arg>
+<doc>Sets the prompt used by `Read Until Prompt` and `Login` in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.148679" elapsed="0.000129"/>
+</kw>
+<arg>'${prompt}'!=''</arg>
+<arg>Telnet.Set Prompt</arg>
+<arg>${prompt}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.148363" elapsed="0.000507"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:28.149259" level="INFO">echo 'password' | dhclient eth-lan -r</msg>
+<arg>${Command}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.149048" elapsed="0.000254"/>
+</kw>
+<kw name="Write" owner="Telnet">
+<msg time="2025-12-17T01:33:28.150013" level="INFO">echo 'password' | dhclient eth-lan -r</msg>
+<msg time="2025-12-17T01:33:28.150125" level="INFO">${result} = echo 'password' | dhclient eth-lan -r
+</msg>
+<var>${result}</var>
+<arg>${Command}</arg>
+<doc>Writes the given text plus a newline into the connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.149408" elapsed="0.000744"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:33:30.151475" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:33:28.150319" elapsed="2.001253"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Read Until Prompt" owner="Telnet">
+<msg time="2025-12-17T01:33:30.152409" level="INFO">Killed old client process
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+root@dockerimage-lan:~#</msg>
+<doc>Reads output until the prompt is encountered.</doc>
+<status status="PASS" start="2025-12-17T01:33:30.152147" elapsed="0.000363"/>
+</kw>
+<msg time="2025-12-17T01:33:30.152614" level="INFO">${result} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")</msg>
+<var>${result}</var>
+<arg>Telnet.Read Until Prompt</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-17T01:33:30.151753" elapsed="0.000886"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.153206" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:33:30.152754" elapsed="2.000547"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:33:32.153656" level="INFO">${result_2} =  </msg>
+<var>${result_2}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.153465" elapsed="0.000220"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.154202" level="INFO">${result} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>${result_2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.153813" elapsed="0.000418"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.154571" level="INFO">('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.154355" elapsed="0.000259"/>
+</kw>
+<kw name="Close Connection" owner="Telnet">
+<doc>Closes the current Telnet connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.154723" elapsed="0.000194"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:33:32.154977" elapsed="0.000061"/>
+</return>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<status status="PASS" start="2025-12-17T01:33:27.990587" elapsed="4.164577"/>
+</kw>
+<msg time="2025-12-17T01:33:32.155297" level="INFO">${result_1} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<var>${result_1}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='telnet'</arg>
+<arg>cli_telnet</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:27.989668" elapsed="4.165676"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.156508" level="INFO">${result_2} = None</msg>
+<var>${result_2}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='ssh'</arg>
+<arg>cli_ssh</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.155502" elapsed="0.001035"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.157451" level="INFO">${result_3} = None</msg>
+<var>${result_3}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='serial'</arg>
+<arg>cli_serial</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.156673" elapsed="0.000806"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.157982" level="INFO">${result} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  NoneNo...</msg>
+<var>${result}</var>
+<arg>SEPARATOR=</arg>
+<arg>${result_1}</arg>
+<arg>${result_2}</arg>
+<arg>${result_3}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.157601" elapsed="0.000410"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:33:32.158303" level="INFO">${result} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>NoneNone</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.158129" elapsed="0.000200"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:32.158660" level="INFO">('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.158447" elapsed="0.000257"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:33:32.158755" elapsed="0.000040"/>
+</return>
+<msg time="2025-12-17T01:33:32.158996" level="INFO">${result} = ('PASS', "Killed old client process\r\nSystem has not been booted with systemd as init system (PID 1). Can't operate.\r\r\nFailed to connect to bus: Host is down\r\r\nroot@dockerimage-lan:~#")  </msg>
+<var>${result}</var>
+<arg>lanhost</arg>
+<arg>echo '${DEVICES.lanhost.password}' | dhclient ${DEVICES.lanhost.interface} -r</arg>
+<arg>prompt=root@dockerimage-lan:~#</arg>
+<arg>timeout=60</arg>
+<status status="PASS" start="2025-12-17T01:33:27.985239" elapsed="4.173784"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.160219" level="INFO">Slept 4 seconds.</msg>
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:33:32.159147" elapsed="4.001170"/>
+</kw>
+<kw name="cli" owner="telnet_ssh_sample">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.161972" level="INFO">['prompt=vagrant@lanhost', 'timeout=90']</msg>
+<arg>${other_agrs}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.161717" elapsed="0.000302"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.162410" level="INFO">${other_agrs} = ['prompt=vagrant@lanhost', 'timeout=90']</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.162131" elapsed="0.000305"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:33:36.162732" level="INFO">${other_agrs} = 'prompt=vagrant@lanhost', 'timeout=90'</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<arg>[</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.162545" elapsed="0.000213"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:33:36.163243" level="INFO">${prompt_arg} = vagrant@lanhost', 'timeout=90'</msg>
+<var>${prompt_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>prompt=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.162875" elapsed="0.000396"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:33:36.163604" level="INFO">${prompt_arg} = vagrant@lanhost</msg>
+<var>${prompt_arg}</var>
+<arg>${prompt_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.163431" elapsed="0.000198"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:33:36.163920" level="INFO">${timeout_arg} = 90'</msg>
+<var>${timeout_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>timeout=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.163740" elapsed="0.000206"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:33:36.164221" level="INFO">${timeout_arg} = 90</msg>
+<var>${timeout_arg}</var>
+<arg>${timeout_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.164054" elapsed="0.000192"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="cli_telnet" owner="telnet_ssh_sample">
+<kw name="Open Connection" owner="Telnet">
+<msg time="2025-12-17T01:33:36.166846" level="INFO">Opening connection to 192.168.100.20:23 with prompt: root@dockerimage-lan</msg>
+<arg>${DEVICES.${Device}.ip}</arg>
+<arg>timeout=60</arg>
+<arg>prompt=${DEVICES.${Device}.prompt}</arg>
+<arg>port=${DEVICES.${Device}.port}</arg>
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.165504" elapsed="0.001562"/>
+</kw>
+<kw name="Login" owner="Telnet">
+<msg time="2025-12-17T01:33:36.317579" level="INFO">Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+root@dockerimage-lan</msg>
+<msg time="2025-12-17T01:33:36.317722" level="INFO">${login_result} = 
+Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ub...</msg>
+<var>${login_result}</var>
+<arg>${DEVICES.${Device}.user_name}</arg>
+<arg>${DEVICES.${Device}.password}</arg>
+<arg>login_prompt=${DEVICES.${Device}.login_prompt}</arg>
+<arg>password_prompt=${DEVICES.${Device}.password_prompt}</arg>
+<doc>Logs in to the Telnet server with the given user information.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.167195" elapsed="0.150557"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${timeout}'==''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${DEVICES.${Device}.timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.317999" elapsed="0.000358"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Timeout" owner="Telnet">
+<arg>${timeout}</arg>
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.318839" elapsed="0.000238"/>
+</kw>
+<arg>'${timeout}'!=''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.318495" elapsed="0.000644"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:33:36.319351" level="INFO">:~#</msg>
+<msg time="2025-12-17T01:33:36.319425" level="INFO">${result} = :~# </msg>
+<var>${result}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.319250" elapsed="0.000200"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.319788" level="INFO">90</msg>
+<arg>${timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.319562" elapsed="0.000271"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.320230" level="INFO">vagrant@lanhost</msg>
+<arg>${prompt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.320013" elapsed="0.000262"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Prompt" owner="Telnet">
+<arg>${prompt}</arg>
+<doc>Sets the prompt used by `Read Until Prompt` and `Login` in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.320727" elapsed="0.000154"/>
+</kw>
+<arg>'${prompt}'!=''</arg>
+<arg>Telnet.Set Prompt</arg>
+<arg>${prompt}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.320395" elapsed="0.000604"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:33:36.321335" level="INFO">echo 'password' | dhclient eth-lan</msg>
+<arg>${Command}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.321111" elapsed="0.000269"/>
+</kw>
+<kw name="Write" owner="Telnet">
+<msg time="2025-12-17T01:33:36.322244" level="INFO">echo 'password' | dhclient eth-lan</msg>
+<msg time="2025-12-17T01:33:36.322347" level="INFO">${result} = echo 'password' | dhclient eth-lan
+</msg>
+<var>${result}</var>
+<arg>${Command}</arg>
+<doc>Writes the given text plus a newline into the connection.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.321491" elapsed="0.000883"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:33:38.323234" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.322572" elapsed="2.000757"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Read Until Prompt" owner="Telnet">
+<msg time="2025-12-17T01:35:08.346661" level="INFO">System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+root@dockerimage-lan:~#</msg>
+<msg time="2025-12-17T01:35:08.346841" level="FAIL">Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.</msg>
+<doc>Reads output until the prompt is encountered.</doc>
+<status status="FAIL" start="2025-12-17T01:33:38.323819" elapsed="90.023213">Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.</status>
+</kw>
+<msg time="2025-12-17T01:35:08.347164" level="INFO">${result} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.")</msg>
+<var>${result}</var>
+<arg>Telnet.Read Until Prompt</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-17T01:33:38.323507" elapsed="90.023684"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.348064" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:08.347334" elapsed="2.000863"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:35:10.348546" level="INFO">${result_2} = </msg>
+<var>${result_2}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.348358" elapsed="0.000216"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.349067" level="INFO">${result} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>${result_2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.348698" elapsed="0.000397"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.349476" level="INFO">('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.349263" elapsed="0.000256"/>
+</kw>
+<kw name="Close Connection" owner="Telnet">
+<doc>Closes the current Telnet connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.349625" elapsed="0.000161"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:10.349918" elapsed="0.000102"/>
+</return>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<status status="PASS" start="2025-12-17T01:33:36.165191" elapsed="94.185062"/>
+</kw>
+<msg time="2025-12-17T01:35:10.350485" level="INFO">${result_1} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<var>${result_1}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='telnet'</arg>
+<arg>cli_telnet</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:33:36.164367" elapsed="94.186163"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.351585" level="INFO">${result_2} = None</msg>
+<var>${result_2}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='ssh'</arg>
+<arg>cli_ssh</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.350687" elapsed="0.000927"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.352513" level="INFO">${result_3} = None</msg>
+<var>${result_3}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='serial'</arg>
+<arg>cli_serial</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.351745" elapsed="0.000797"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.353020" level="INFO">${result} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") NoneNone</msg>
+<var>${result}</var>
+<arg>SEPARATOR=</arg>
+<arg>${result_1}</arg>
+<arg>${result_2}</arg>
+<arg>${result_3}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.352660" elapsed="0.000389"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:35:10.353368" level="INFO">${result} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>NoneNone</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.353164" elapsed="0.000229"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:10.353716" level="INFO">('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.353506" elapsed="0.000253"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:10.353807" elapsed="0.000036"/>
+</return>
+<msg time="2025-12-17T01:35:10.354052" level="INFO">${result} = ('FAIL', "Prompt 'vagrant@lanhost' not found in 1 minute 30 seconds.") </msg>
+<var>${result}</var>
+<arg>lanhost</arg>
+<arg>echo '${DEVICES.lanhost.password}' | dhclient ${DEVICES.lanhost.interface}</arg>
+<arg>prompt=vagrant@lanhost</arg>
+<arg>timeout=90</arg>
+<status status="PASS" start="2025-12-17T01:33:36.160567" elapsed="94.193510"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.355237" level="INFO">Slept 15 seconds.</msg>
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:10.354183" elapsed="15.001152"/>
+</kw>
+<kw name="Get IP from host" owner="kw_basic_LAN">
+<kw name="cli" owner="telnet_ssh_sample">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.357114" level="INFO">[]</msg>
+<arg>${other_agrs}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.356871" elapsed="0.000289"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.357528" level="INFO">${other_agrs} = []</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.357271" elapsed="0.000283"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:35:25.357847" level="INFO">${other_agrs} = </msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<arg>[</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.357660" elapsed="0.000219"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:35:25.358165" level="INFO">${prompt_arg} = </msg>
+<var>${prompt_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>prompt=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.357991" elapsed="0.000199"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:35:25.358461" level="INFO">${prompt_arg} = </msg>
+<var>${prompt_arg}</var>
+<arg>${prompt_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.358296" elapsed="0.000189"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:35:25.358777" level="INFO">${timeout_arg} = </msg>
+<var>${timeout_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>timeout=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.358591" elapsed="0.000211"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:35:25.359081" level="INFO">${timeout_arg} = </msg>
+<var>${timeout_arg}</var>
+<arg>${timeout_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.358915" elapsed="0.000192"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="cli_telnet" owner="telnet_ssh_sample">
+<kw name="Open Connection" owner="Telnet">
+<msg time="2025-12-17T01:35:25.361693" level="INFO">Opening connection to 192.168.100.20:23 with prompt: root@dockerimage-lan</msg>
+<arg>${DEVICES.${Device}.ip}</arg>
+<arg>timeout=60</arg>
+<arg>prompt=${DEVICES.${Device}.prompt}</arg>
+<arg>port=${DEVICES.${Device}.port}</arg>
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.360350" elapsed="0.001579"/>
+</kw>
+<kw name="Login" owner="Telnet">
+<msg time="2025-12-17T01:35:25.513643" level="INFO">Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+root@dockerimage-lan</msg>
+<msg time="2025-12-17T01:35:25.513777" level="INFO">${login_result} = 
+Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ub...</msg>
+<var>${login_result}</var>
+<arg>${DEVICES.${Device}.user_name}</arg>
+<arg>${DEVICES.${Device}.password}</arg>
+<arg>login_prompt=${DEVICES.${Device}.login_prompt}</arg>
+<arg>password_prompt=${DEVICES.${Device}.password_prompt}</arg>
+<doc>Logs in to the Telnet server with the given user information.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.362073" elapsed="0.151786"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Timeout" owner="Telnet">
+<arg>${DEVICES.${Device}.timeout}</arg>
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.514517" elapsed="0.000696"/>
+</kw>
+<arg>'${timeout}'==''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${DEVICES.${Device}.timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.514105" elapsed="0.001171"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${timeout}'!=''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.515401" elapsed="0.000284"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:35:25.515971" level="INFO">:~#</msg>
+<msg time="2025-12-17T01:35:25.516048" level="INFO">${result} = :~# </msg>
+<var>${result}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.515805" elapsed="0.000268"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.516412" level="INFO"/>
+<arg>${timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.516185" elapsed="0.000270"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.516786" level="INFO"/>
+<arg>${prompt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.516569" elapsed="0.000261"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${prompt}'!=''</arg>
+<arg>Telnet.Set Prompt</arg>
+<arg>${prompt}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.517027" elapsed="0.000273"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:25.517652" level="INFO">ifconfig eth-lan | grep "inet"</msg>
+<arg>${Command}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.517422" elapsed="0.000276"/>
+</kw>
+<kw name="Write" owner="Telnet">
+<msg time="2025-12-17T01:35:25.518634" level="INFO">ifconfig eth-lan | grep "inet"</msg>
+<msg time="2025-12-17T01:35:25.518738" level="INFO">${result} = ifconfig eth-lan | grep "inet"
+</msg>
+<var>${result}</var>
+<arg>${Command}</arg>
+<doc>Writes the given text plus a newline into the connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.517811" elapsed="0.000973"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:27.520129" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.519045" elapsed="2.001180"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Read Until Prompt" owner="Telnet">
+<msg time="2025-12-17T01:35:27.521012" level="INFO">[01;31m[Kinet[m[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255
+root@dockerimage-lan</msg>
+<doc>Reads output until the prompt is encountered.</doc>
+<status status="PASS" start="2025-12-17T01:35:27.520715" elapsed="0.000349"/>
+</kw>
+<msg time="2025-12-17T01:35:27.521165" level="INFO">${result} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan')</msg>
+<var>${result}</var>
+<arg>Telnet.Read Until Prompt</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-17T01:35:27.520400" elapsed="0.000790"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.521950" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:27.521301" elapsed="2.000746"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:35:29.522336" level="INFO">:~#</msg>
+<msg time="2025-12-17T01:35:29.522426" level="INFO">${result_2} = :~# </msg>
+<var>${result_2}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.522208" elapsed="0.000242"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.522932" level="INFO">${result} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>${result_2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.522593" elapsed="0.000367"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.523294" level="INFO">('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.523078" elapsed="0.000260"/>
+</kw>
+<kw name="Close Connection" owner="Telnet">
+<doc>Closes the current Telnet connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.523445" elapsed="0.000177"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:29.523676" elapsed="0.000046"/>
+</return>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<status status="PASS" start="2025-12-17T01:35:25.360043" elapsed="4.163874"/>
+</kw>
+<msg time="2025-12-17T01:35:29.524054" level="INFO">${result_1} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<var>${result_1}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='telnet'</arg>
+<arg>cli_telnet</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:25.359228" elapsed="4.164853"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.525204" level="INFO">${result_2} = None</msg>
+<var>${result_2}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='ssh'</arg>
+<arg>cli_ssh</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.524291" elapsed="0.000943"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.526168" level="INFO">${result_3} = None</msg>
+<var>${result_3}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='serial'</arg>
+<arg>cli_serial</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.525366" elapsed="0.000832"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.526983" level="INFO">${result} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# NoneNone</msg>
+<var>${result}</var>
+<arg>SEPARATOR=</arg>
+<arg>${result_1}</arg>
+<arg>${result_2}</arg>
+<arg>${result_3}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.526380" elapsed="0.000632"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:35:29.527342" level="INFO">${result} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>NoneNone</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.527164" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.527834" level="INFO">('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.527476" elapsed="0.000444"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:29.528023" elapsed="0.000038"/>
+</return>
+<msg time="2025-12-17T01:35:29.528184" level="INFO">${getIP} = ('PASS', '        \x1b[01;31m\x1b[Kinet\x1b[m\x1b[K 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255\r\nroot@dockerimage-lan') :~# </msg>
+<var>${getIP}</var>
+<arg>${host}</arg>
+<arg>ifconfig ${DEVICES.${host}.interface} | grep "inet"</arg>
+<status status="PASS" start="2025-12-17T01:35:25.356166" elapsed="4.172043"/>
+</kw>
+<kw name="Get Regexp Matches" owner="String">
+<msg time="2025-12-17T01:35:29.528630" level="INFO">@{getIP} = [ 192.168.1.104 | 255.255.255.0 | 192.168.1.255 ]</msg>
+<var>@{getIP}</var>
+<arg>${getIP}</arg>
+<arg>(\\d+\\.){3}\\d+</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.528320" elapsed="0.000337"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-12-17T01:35:29.529020" level="INFO">${getIP} = 192.168.1.104</msg>
+<var>${getIP}</var>
+<arg>${getIP}[0]</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.528767" elapsed="0.000279"/>
+</kw>
+<return>
+<value>${getIP}</value>
+<status status="PASS" start="2025-12-17T01:35:29.529096" elapsed="0.000033"/>
+</return>
+<msg time="2025-12-17T01:35:29.529247" level="INFO">${lanhost_IP} = 192.168.1.104</msg>
+<var>${lanhost_IP}</var>
+<arg>lanhost</arg>
+<status status="PASS" start="2025-12-17T01:35:25.355555" elapsed="4.173716"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${lanhost_IP}</arg>
+<arg>192.168.1.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.529376" elapsed="0.000364"/>
+</kw>
+<status status="PASS" start="2025-12-17T01:33:27.984816" elapsed="121.544994"/>
+</kw>
+<kw name="Verify LAN PC can access WebGUI" owner="kw_basic_LAN">
+<kw name="cli" owner="telnet_ssh_sample">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.531225" level="INFO">['prompt=root@dockerimage-lan:~#', 'timeout=60']</msg>
+<arg>${other_agrs}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.531005" elapsed="0.000265"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.531642" level="INFO">${other_agrs} = ['prompt=root@dockerimage-lan:~#', 'timeout=60']</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.531377" elapsed="0.000292"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:35:29.532044" level="INFO">${other_agrs} = 'prompt=root@dockerimage-lan:~#', 'timeout=60'</msg>
+<var>${other_agrs}</var>
+<arg>${other_agrs}</arg>
+<arg>[</arg>
+<arg>]</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.531776" elapsed="0.000294"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:35:29.532355" level="INFO">${prompt_arg} = root@dockerimage-lan:~#', 'timeout=60'</msg>
+<var>${prompt_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>prompt=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.532183" elapsed="0.000198"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:35:29.532653" level="INFO">${prompt_arg} = root@dockerimage-lan:~#</msg>
+<var>${prompt_arg}</var>
+<arg>${prompt_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.532488" elapsed="0.000190"/>
+</kw>
+<kw name="Fetch From Right" owner="String">
+<msg time="2025-12-17T01:35:29.533036" level="INFO">${timeout_arg} = 60'</msg>
+<var>${timeout_arg}</var>
+<arg>${other_agrs}</arg>
+<arg>timeout=</arg>
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.532784" elapsed="0.000277"/>
+</kw>
+<kw name="Fetch From Left" owner="String">
+<msg time="2025-12-17T01:35:29.533332" level="INFO">${timeout_arg} = 60</msg>
+<var>${timeout_arg}</var>
+<arg>${timeout_arg}</arg>
+<arg>'</arg>
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.533167" elapsed="0.000190"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="cli_telnet" owner="telnet_ssh_sample">
+<kw name="Open Connection" owner="Telnet">
+<msg time="2025-12-17T01:35:29.536152" level="INFO">Opening connection to 192.168.100.20:23 with prompt: root@dockerimage-lan</msg>
+<arg>${DEVICES.${Device}.ip}</arg>
+<arg>timeout=60</arg>
+<arg>prompt=${DEVICES.${Device}.prompt}</arg>
+<arg>port=${DEVICES.${Device}.port}</arg>
+<doc>Opens a new Telnet connection to the given host and port.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.534663" elapsed="0.001685"/>
+</kw>
+<kw name="Login" owner="Telnet">
+<msg time="2025-12-17T01:35:29.687972" level="INFO">Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+root@dockerimage-lan</msg>
+<msg time="2025-12-17T01:35:29.688119" level="INFO">${login_result} = 
+Linux 6.14.0-36-generic (dockerimage-lan) (pts/2)
+
+dockerimage-lan login: root
+Password: 
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-36-generic x86_64)
+
+ * Documentation:  https://help.ub...</msg>
+<var>${login_result}</var>
+<arg>${DEVICES.${Device}.user_name}</arg>
+<arg>${DEVICES.${Device}.password}</arg>
+<arg>login_prompt=${DEVICES.${Device}.login_prompt}</arg>
+<arg>password_prompt=${DEVICES.${Device}.password_prompt}</arg>
+<doc>Logs in to the Telnet server with the given user information.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.536474" elapsed="0.151674"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${timeout}'==''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${DEVICES.${Device}.timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.688330" elapsed="0.000337"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Timeout" owner="Telnet">
+<arg>${timeout}</arg>
+<doc>Sets the timeout used for waiting output in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.689217" elapsed="0.000148"/>
+</kw>
+<arg>'${timeout}'!=''</arg>
+<arg>Telnet.Set Timeout</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.688809" elapsed="0.000616"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:35:29.689674" level="INFO">:~#</msg>
+<msg time="2025-12-17T01:35:29.689750" level="INFO">${result} = :~# </msg>
+<var>${result}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.689533" elapsed="0.000241"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.690193" level="INFO">60</msg>
+<arg>${timeout}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.689932" elapsed="0.000306"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.690571" level="INFO">root@dockerimage-lan:~#</msg>
+<arg>${prompt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.690352" elapsed="0.000264"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Prompt" owner="Telnet">
+<arg>${prompt}</arg>
+<doc>Sets the prompt used by `Read Until Prompt` and `Login` in the current connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.691203" elapsed="0.000136"/>
+</kw>
+<arg>'${prompt}'!=''</arg>
+<arg>Telnet.Set Prompt</arg>
+<arg>${prompt}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.690753" elapsed="0.000647"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:29.691736" level="INFO">echo 'password' | wget http://192.168.1.1</msg>
+<arg>${Command}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.691513" elapsed="0.000268"/>
+</kw>
+<kw name="Write" owner="Telnet">
+<msg time="2025-12-17T01:35:29.692950" level="INFO">echo 'password' | wget http://192.168.1.1</msg>
+<msg time="2025-12-17T01:35:29.693075" level="INFO">${result} = echo 'password' | wget http://192.168.1.1
+</msg>
+<var>${result}</var>
+<arg>${Command}</arg>
+<doc>Writes the given text plus a newline into the connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.691944" elapsed="0.001159"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:31.693972" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.693294" elapsed="2.000774"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Read Until Prompt" owner="Telnet">
+<msg time="2025-12-17T01:35:31.695001" level="INFO">--2025-12-17 01:35:29--  http://192.168.1.1/
+Connecting to 192.168.1.1:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 138
+Saving to: ‘index.html’
+
+index.html            0%[                    ]       0  --.-KB/s               index.html          100%[===================&gt;]     138  --.-KB/s    in 0s      
+
+2025-12-17 01:35:29 (24.5 MB/s) - ‘index.html’ saved [138/138]
+
+root@dockerimage-lan:~#</msg>
+<doc>Reads output until the prompt is encountered.</doc>
+<status status="PASS" start="2025-12-17T01:35:31.694582" elapsed="0.000475"/>
+</kw>
+<msg time="2025-12-17T01:35:31.707276" level="INFO">${result} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result}</var>
+<arg>Telnet.Read Until Prompt</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-12-17T01:35:31.694246" elapsed="0.013106"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.708184" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:31.707524" elapsed="2.000757"/>
+</kw>
+<kw name="Read" owner="Telnet">
+<msg time="2025-12-17T01:35:33.708630" level="INFO">${result_2} =  </msg>
+<var>${result_2}</var>
+<doc>Reads everything that is currently available in the output.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.708443" elapsed="0.000214"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.709176" level="INFO">${result} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>${result_2}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.708783" elapsed="0.000425"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.709545" level="INFO">('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n\rindex.html            0%[                    ]       0  --.-KB/s               \rindex.html          100%[===================&gt;]     138  --.-KB/s    in 0s      \r\n\r\n2025-12-17 01:35:29 (24.5 MB/s) - ‘index.html’ saved [138/138]\r\n\r\nroot@dockerimage-lan:~#')  </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.709331" elapsed="0.000264"/>
+</kw>
+<kw name="Close Connection" owner="Telnet">
+<doc>Closes the current Telnet connection.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.709704" elapsed="0.000174"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:33.709981" elapsed="0.000046"/>
+</return>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<status status="PASS" start="2025-12-17T01:35:29.534357" elapsed="4.175785"/>
+</kw>
+<msg time="2025-12-17T01:35:33.710236" level="INFO">${result_1} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result_1}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='telnet'</arg>
+<arg>cli_telnet</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:29.533474" elapsed="4.176791"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.711349" level="INFO">${result_2} = None</msg>
+<var>${result_2}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='ssh'</arg>
+<arg>cli_ssh</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.710472" elapsed="0.000906"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.712274" level="INFO">${result_3} = None</msg>
+<var>${result_3}</var>
+<arg>'${DEVICES.${Device}.protocol}'=='serial'</arg>
+<arg>cli_serial</arg>
+<arg>${Device}</arg>
+<arg>${Command}</arg>
+<arg>${timeout_arg}</arg>
+<arg>${prompt_arg}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.711512" elapsed="0.000790"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.712735" level="INFO">${result} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result}</var>
+<arg>SEPARATOR=</arg>
+<arg>${result_1}</arg>
+<arg>${result_2}</arg>
+<arg>${result_3}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.712422" elapsed="0.000343"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2025-12-17T01:35:33.713132" level="INFO">${result} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result}</var>
+<arg>${result}</arg>
+<arg>NoneNone</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.712912" elapsed="0.000284"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-17T01:35:33.713528" level="INFO">('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n\rindex.html            0%[                    ]       0  --.-KB/s               \rindex.html          100%[===================&gt;]     138  --.-KB/s    in 0s      \r\n\r\n2025-12-17 01:35:29 (24.5 MB/s) - ‘index.html’ saved [138/138]\r\n\r\nroot@dockerimage-lan:~#')  </msg>
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.713311" elapsed="0.000265"/>
+</kw>
+<return>
+<value>${result}</value>
+<status status="PASS" start="2025-12-17T01:35:33.713628" elapsed="0.000036"/>
+</return>
+<msg time="2025-12-17T01:35:33.713787" level="INFO">${result} = ('PASS', '--2025-12-17 01:35:29--  http://192.168.1.1/\r\nConnecting to 192.168.1.1:80... connected.\r\nHTTP request sent, awaiting response... 200 OK\r\nLength: 138\r\nSaving to: ‘index.html’\r\n\r\n...</msg>
+<var>${result}</var>
+<arg>lanhost</arg>
+<arg>echo '${DEVICES.lanhost.password}' | wget http://192.168.1.1</arg>
+<arg>prompt=root@dockerimage-lan:~#</arg>
+<arg>timeout=60</arg>
+<status status="PASS" start="2025-12-17T01:35:29.530294" elapsed="4.183521"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-17T01:35:35.714283" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-17T01:35:33.713995" elapsed="2.000385"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>200 OK</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-12-17T01:35:35.714546" elapsed="0.000402"/>
+</kw>
+<status status="PASS" start="2025-12-17T01:35:29.530022" elapsed="6.185009"/>
+</kw>
+<tag>@AUTHOR=Frank_Hung</tag>
+<tag>@FEATURE=Function</tag>
+<tag>@Function=Somke_Test</tag>
+<tag>gcpe7</tag>
+<status status="PASS" start="2025-12-17T01:33:27.983494" elapsed="127.731649"/>
+</test>
+<kw name="Close All Connections" owner="Telnet" type="TEARDOWN">
+<doc>Closes all open connections and empties the connection cache.</doc>
+<status status="PASS" start="2025-12-17T01:35:35.715938" elapsed="0.000141"/>
+</kw>
+<status status="PASS" start="2025-12-17T01:33:27.654894" elapsed="128.061236"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">@AUTHOR=Frank_Hung</stat>
+<stat pass="1" fail="0" skip="0">@FEATURE=Function</stat>
+<stat pass="1" fail="0" skip="0">@Function=Somke_Test</stat>
+<stat pass="1" fail="0" skip="0">gcpe7</stat>
+</tag>
+<suite>
+<stat name="Basic LAN" id="s1" pass="1" fail="0" skip="0">Basic LAN</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-12-17T01:33:27.827740" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/telnet_ssh_sample.robot' on line 77: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.828205" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/telnet_ssh_sample.robot' on line 96: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.828697" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/telnet_ssh_sample.robot' on line 110: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.829163" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/telnet_ssh_sample.robot' on line 124: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.829585" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/telnet_ssh_sample.robot' on line 145: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.975440" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/kw_basic_LAN.robot' on line 17: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.976265" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/kw_basic_LAN.robot' on line 86: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-12-17T01:33:27.976459" level="WARN">Error in file '/workspace/tests/White_label_ATS-WREQ-130BE/keyword/kw_basic_LAN.robot' on line 93: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
