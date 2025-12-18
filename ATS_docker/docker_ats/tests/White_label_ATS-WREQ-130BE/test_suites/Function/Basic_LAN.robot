@@ -25,7 +25,7 @@ G-CPE-7 : Verify default setting of DHCP server
 #    [Teardown]    upload result to testlink    G-CPE-7
 
 G-CPE-617 : Verify LAN IP change to 192.168.0.0/16
-    [Tags]    @AUTHOR=Frank_Hung    testing2
+    [Tags]    @AUTHOR=Frank_Hung    gcpe617
     Change DUT LAN IP adddress and subnet mask config 192.168.0.1/255.255.0.0
     Verify LAN IP change to 192.168.0.0/16
     sleep    1
