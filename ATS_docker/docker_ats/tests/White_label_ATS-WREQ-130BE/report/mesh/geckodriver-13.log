@@ -1,0 +1,27 @@
+1766563426771	geckodriver	INFO	Listening on 127.0.0.1:40079
+1766563426778	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/usr/bin/firefox" "--m ... te" "--remote-debugging-port" "48175" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilekvOz7s"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1766563427265	Marionette	INFO	Marionette enabled
+1766563427946	Marionette	INFO	Listening on port 37389
+WebDriver BiDi listening on ws://127.0.0.1:48175
+[Parent 27728, Main Thread] WARNING: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+: 'glib warning', file /build/firefox-I6agFH/firefox-146.0+build1/toolkit/xre/nsSigHandlers.cpp:201
+
+** (firefox:27728): WARNING **: 08:03:47.964: Failed to create DBus proxy for org.a11y.Bus: Failed to execute child process “dbus-launch” (No such file or directory)
+
+Read port: 37389
+1766563428075	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1766563431958	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+console.error: (new TypeError("can't access property \"find\", this._searchProviderInfo is null", "moz-src:///browser/components/search/SearchSERPTelemetry.sys.mjs", 1141))
+console.error: (new TypeError("can't access property \"find\", this._searchProviderInfo is null", "moz-src:///browser/components/search/SearchSERPTelemetry.sys.mjs", 1141))
+console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1221"  data: no]
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://192.168.1.1."
+console.warn: BackupService: "There was an error while trying to get the Document's directory" [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIProperties.get]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource:///modules/backup/BackupService.sys.mjs :: get docsDirFolderPath :: line 1221"  data: no]
+JavaScript error: resource:///modules/backup/BackupService.sys.mjs, line 3716: NotAllowedError: PathUtils.join: PathUtils does not support empty paths
+1766563500150	Marionette	INFO	Stopped listening on port 37389
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]

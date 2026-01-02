@@ -1,3 +1,7 @@
-sudo ip link delete enp3s0f1.20
-sudo ip link delete enp3s0f1.30
-sudo ip link delete enp3s0f1.99
+#!/bin/bash
+
+source ./config.sh
+
+sudo ip link delete ${ats_interface}.${lan_vlan_id}
+sudo ip link delete ${ats_interface}.${wan_vlan_id}
+sudo ip link delete ${ats_interface}.99

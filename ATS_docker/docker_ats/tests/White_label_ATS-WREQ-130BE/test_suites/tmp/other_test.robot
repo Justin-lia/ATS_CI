@@ -11,41 +11,9 @@ Resource    ../base.robot
 #Library     telnet_case.py
 
 *** Test Cases ***
-Pre-Setup Environment and DUT for test
-	[Tags]	mesh_mlo_test 
-	[Documentation]	1.Enable host wired network
-	...		2.Check DUT setup wizard
-	...		3.Default Controller
-	...		4.Setup DUT setup wizard
-	...		5.Check controller FW
-	...		6.Enable SSH from DUT
-	Log		Enable Client wired Network 	INFO
-	Enable Client wired Network 
-	
-	Log		Check Wizard 	INFO
-	Check Wizard
-
-	Log		Default Controller	INFO
-	Default Controller
-	
-	Log		Setup Wizard	INFO
-	Setup Wizard
-	
-	Log		Check Controller FW 	INFO
-	Check Controller FW 
-	
+Other test enable sshd
 	Log		Enable controller SSH 		INFO
 	Enable controller SSH 
-
-G-CPE-523 MLO Protocol Check: Disabled State
-	[Tags]	G-CPE-523	Justin_Liao
-	[Documentation]		1.Disable MLO
-	...		2.Get dut ssid/bssid/channel from DUT
-	...		3.Telnet to sniff pc to Scan SSID/bssid/channel
-	...		4.Telnet to sniff pc to sniff wifi pack
-	...		5.Confirm DUT becom value "Maximum_Number_Of_Simultaneous_Links" is 0
-	...		0:PASS , Other: Fail.
-
 
 *** Keywords ***
 
@@ -133,4 +101,27 @@ Retry Setup Wizard
 Default Controller    
     Login GUI    ${HOST}
     Defalut DUT/Agent and Wait setup
+    Close All Browsers
+	
+
+Enable controller SSH 
+    Wait Until Keyword Succeeds    3x    10s    Retry Enable controller SSH 
+
+Retry Enable controller SSH 
+    Run Keyword And Ignore Error    Close All Browsers   
+    Login GUI    ${HOST}
+    Click Element    xpath=//*[@id="menu_adv_setting"]
+    sleep    5
+    Click Element    xpath=//*[@id="menu_adv_setting_ssh"]
+    sleep    15
+    ${status}=    Get Element Attribute    id=ssh_enabled    value
+    Run Keyword If    '${status}' == '0'    Click ssh button
+
+Click ssh button    
+    Click Element    xpath=//*[@id="switch_layout_ssh_enabled"]
+    sleep    5
+    Click Element    xpath=//*[@id="apply"]
+    sleep    5
+    Handle Alert
+    sleep    30
     Close All Browsers

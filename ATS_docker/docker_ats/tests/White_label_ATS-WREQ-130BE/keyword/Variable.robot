@@ -48,4 +48,40 @@ ${platformid}    9
 ${testplanid}    30439
 ${buildid}    38
 
-#-----------------------------------------------
+#--Justin update---------------------------------------------
+${COM_PORT}    COM3    
+${baudrate_value}    115200
+${IFACE}       wlp3s0f0
+${Client_PASSWORD}    password
+${conf_PATH}   /etc/wpa_supplicant/wpa_supplicant.conf
+${conf_wpa3_PATH}   /etc/wpa_supplicant/wpa_supplicant_wpa3.conf
+${Config_name}    test.conf
+${TIMEOUT}     10
+${Count_Number}    0
+${total_unable_to_get_value_from_USP}    0
+${total_get_value_from_USP}    0
+${wait_counter}        0
+${dynamic_value}        0
+${TMP_CONF}    test_tmp.conf
+${ORIG_CONF}    /etc/wpa_supplicant/wpa_supplicant.conf
+${TMP1_CONF}    test_tmp1.conf
+${ORIG_wpa3_CONF}    /etc/wpa_supplicant/wpa_supplicant_wpa3.conf
+${TMP1_wpa3_CONF}    test_wpa3_tmp1.conf
+${GUI_IP}    192.168.1.1
+##---telnet buffalo console-----
+${Switch_HOST}    127.0.0.1
+${Switch_PORT}    9998
+##---SSH-----
+${HOST}     192.168.1.1
+${USER}     root
+${SSH_PASSWORD}    
+${CMD}      ifconfig
+##---DUT SSID---
+${Default_PSK}    
+#${Default_PSK}    4cba7d0291ed
+${Changed_PSK}    12345678
+${Changed_SSID}    AUTOmeshTEST
+${Changed_SSID_PSK}    123456789012345678901234567890121234567890123456789012345678901
+${Changed_2G_SSID}    AUTOWiFiBasic_2G_123456789012345
+${Changed_5G_SSID}    AUTOWiFiBasic_5G_123456789012345
+${Changed_6G_SSID}    AUTOWiFiBasic_6G_123456789012345
