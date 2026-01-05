@@ -29,4 +29,4 @@ networks:
   lan_net_dut_lan:
     driver: macvlan
     driver_opts:
-      parent: ${env_ats_interface}.20
+      parent: ${env_lan_interface}

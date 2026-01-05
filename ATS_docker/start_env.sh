@@ -17,15 +17,31 @@ cp ./fix_interface_name_lan.sh ./docker_lan/tests/
 export env_ats_inet_mac=${env_ats_inet_mac}
 export env_ats_lan_mac=${env_ats_lan_mac}
 export env_ats_back_mac=${env_ats_back_mac}
-export env_ats_interface=${ats_interface}
+
 
 export env_lan_lan_mac=${env_lan_lan_mac}
 export env_lan_back_mac=${env_lan_back_mac}
-export env_lan_interface=${ats_interface}.${lan_vlan_id}
 
 export env_wan_wan_mac=${env_wan_wan_mac}
 export env_wan_back_mac=${env_wan_back_mac}
-export env_wan_interface=${ats_interface}.${wan_vlan_id}
+
+
+if [ ${ats_interface} = ${lan_interface} ]; then
+	export env_ats_interface=${ats_interface}
+	export env_lan_interface=${ats_interface}.${lan_vlan_id}
+	export env_wan_interface=${ats_interface}.${wan_vlan_id}
+else
+	export env_ats_interface=${ats_interface}
+	export env_lan_interface=${lan_interface}
+	export env_wan_interface=${wan_interface}
+fi
+
+echo "host interface name"
+echo "eth-inet binding host interface name: ${env_ats_interface}"
+echo "eth-lan binding host interface name: ${env_lan_interface}"
+echo "eth-back binding host interface name: ${env_ats_interface}"
+echo "eth-wan binding host interface name: ${env_wan_interface}"
+
 
 docker network create \
   --driver=macvlan \

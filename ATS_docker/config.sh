@@ -14,5 +14,8 @@ env_wan_back_mac='02:42:ac:11:00:07'
 
 
 ats_interface='enp3s0f1'
+lan_interface='enp3s0f1'
+wan_interface='enp3s0f1'
 lan_vlan_id='20'
 wan_vlan_id='30'
+backup_vlan_id='99'

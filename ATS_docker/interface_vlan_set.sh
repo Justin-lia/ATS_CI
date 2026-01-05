@@ -9,9 +9,9 @@ sudo ip link set ${ats_interface} promisc on
 # 注意：這只是暫時生效，重開機需重設，建議寫入 Netplan 永久生效
 sudo ip link add link ${ats_interface} name ${ats_interface}.${lan_vlan_id} type vlan id ${lan_vlan_id}
 sudo ip link add link ${ats_interface} name ${ats_interface}.${wan_vlan_id} type vlan id ${wan_vlan_id}
-sudo ip link add link ${ats_interface} name ${ats_interface}.99 type vlan id 99
+sudo ip link add link ${ats_interface} name ${ats_interface}.${backup_vlan_id} type vlan id ${backup_vlan_id}
 
 # 3. 啟動介面
 sudo ip link set ${ats_interface}.${lan_vlan_id} up
 sudo ip link set ${ats_interface}.${wan_vlan_id} up
-sudo ip link set ${ats_interface}.99 up
+sudo ip link set ${ats_interface}.${backup_vlan_id} up
