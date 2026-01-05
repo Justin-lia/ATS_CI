@@ -29,4 +29,4 @@ networks:
     driver: macvlan
     enable_ipv6: true    
     driver_opts:
-      parent: enp3s0f1.30
+      parent: ${env_ats_interface}.30
