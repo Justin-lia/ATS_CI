@@ -1,5 +1,6 @@
 markdown
-```shell
+```
+
 ├── README.md
 ├── start_env.sh
 ├── interface_vlan_set.sh
@@ -10,64 +11,153 @@ markdown
 ├── config.sh
 ├── docker_ats/
 ├── docker_lan/
-└── docker_wts/
+└── docker_wan/
+
 ```
 
-1.Fix config.sh
-	If host pc have 1 interface ，use switch..
-	HOST PC===[switch]===wan-DUT
-	                  ===lan-DUT
-			          ===Internet
-	ats_interface='enp3s0f1' -> host pc connect switch port 1 interface
-	lan_interface='enp3s0f1' -> host pc connect switch port 1 interface
-	wan_interface='enp3s0f1' -> host pc connect switch port 1 interface
-	lan_vlan_id='20' -> lan side vlan id 
-	wan_vlan_id='30' -> wan side vlan id 
-	backup_vlan_id='99'	-> backup vlan id 
-	
-	If host pc have 3 interface ，no switch can setup it..
-	HOST PC===wna-DUT
-		   ===lan-DUT
-		   ===Internet
-		ats_interface='enp3s0' -> connect to internet
-		lan_interface='enp4s0' -> connect to lan
-		wan_interface='enp5s0' -> connect to wan
-		lan_vlan_id='20' -> not be use
-		wan_vlan_id='30' -> not be use
-		backup_vlan_id='99'	-> backup vlan id (use ats_interface)
+---
 
-2.Setup interface 
-	execute 
-	# ./remove_vlan_interface.sh
-	execute
-	# ./interface_vlan_set.sh
-	execute
-	# ./start_env.sh
-	=> if first execute will create docker image.
+# 1. Configure `config.sh`
 
-3.Test script create at
-	./ATS_CI/ATS_docker/docker_ats/tests/
-	
-4.Execute test script
-	cat /ATS_CI/ATS_docker/robot_test/execute_test.sh
-	# docker exec -w /workspace/tests/White_label_ATS-WREQ-130BE env-ats sh ./test.sh
-	/workspace/tests/White_label_ATS-WREQ-130BE => is docker path
-	./test.sh => test case script
-	
-5.Test report 
-	./ATS_CI/ATS_docker/docker_ats/tests/White_label_ATS-WREQ-130BE/report/  => test.sh define
-	
------------------------------------------------------------------------------------------------------------
-test step
+The network configuration depends on how many physical NICs the Host PC has.
 
-1. Setup host pc 
-2. ./remove_vlan_interface.sh ==> del interface vlan info
-3. ./interface_vlan_set.sh ==> add interface vlan info
-4. ./start_env.sh ==> create docker image
-5. ./robot_test/execute_test.sh ==> execute test script
+---
 
+## Scenario A — Host PC has only 1 NIC (Using a Switch + VLAN)
 
+Topology:
 
+```
 
+HOST PC ──[Switch]── WAN (DUT)
+                  ├─ LAN (DUT)
+                  └─ Internet
 
+````
 
+All ATS, LAN, and WAN traffic share the same physical NIC and are separated by VLAN.
+
+Edit `config.sh`:
+
+```bash
+ats_interface='enp3s0f1'   # Host PC NIC connected to switch
+lan_interface='enp3s0f1'   # Same physical NIC
+wan_interface='enp3s0f1'   # Same physical NIC
+
+lan_vlan_id='20'          # VLAN for DUT LAN
+wan_vlan_id='30'          # VLAN for DUT WAN
+backup_vlan_id='99'       # Backup
+````
+
+---
+
+## Scenario B — Host PC has 3 NICs (No Switch)
+
+Topology:
+
+```
+HOST PC ── Internet
+        ├─ WAN (DUT)
+        └─ LAN (DUT)
+```
+
+Each DUT port and HOST PC uses a dedicated NIC.
+
+Edit `config.sh`:
+
+```bash
+ats_interface='enp3s0'     # Connected to Internet
+lan_interface='enp4s0'     # Connected to DUT LAN
+wan_interface='enp5s0'     # Connected to DUT WAN
+
+lan_vlan_id='20'          # Not used
+wan_vlan_id='30'          # Not used
+backup_vlan_id='99'       # Used on ats_interface
+```
+
+---
+
+# 2. Setup Host Interfaces
+
+Run the following scripts in order:
+
+```bash
+./remove_vlan_interface.sh
+./interface_vlan_set.sh
+./start_env.sh
+```
+
+Descriptions:
+
+* `remove_vlan_interface.sh`
+  Removes all existing VLAN interfaces.
+
+* `interface_vlan_set.sh`
+  Creates VLAN interfaces based on `config.sh`.
+
+* `start_env.sh`
+  Builds and starts the Docker environment (creates images on first run).
+
+---
+
+# 3. Test Case Location
+
+Place test cases under:
+
+```
+./ATS_CI/ATS_docker/docker_ats/tests/
+```
+
+Example:
+
+```
+./ATS_CI/ATS_docker/docker_ats/tests/White_label_ATS-WREQ-130BE/
+```
+
+---
+
+# 4. Execute Test Cases
+
+Check the execution script:
+
+```bash
+cat ./ATS_CI/ATS_docker/robot_test/execute_test.sh
+```
+
+Actual execution:
+
+```bash
+docker exec -w /workspace/tests/White_label_ATS-WREQ-130BE env-ats sh ./test.sh
+```
+
+Explanation:
+
+| Item                                          | Description                  |
+| --------------------------------------------- | ---------------------------- |
+| `env-ats`                                     | ATS Docker container         |
+| `/workspace/tests/White_label_ATS-WREQ-130BE` | Test folder inside container |
+| `test.sh`                                     | Test execution script        |
+
+---
+
+# 5. Test Reports
+
+Reports are generated in:
+
+```
+./ATS_CI/ATS_docker/docker_ats/tests/White_label_ATS-WREQ-130BE/report/
+```
+
+The report directory is defined inside `test.sh`.
+
+---
+
+# 6. Full Test Flow
+
+```
+1. Setup Host PC network
+2. ./remove_vlan_interface.sh     # Clean VLANs
+3. ./interface_vlan_set.sh        # Create VLANs
+4. ./start_env.sh                 # Start Docker environment
+5. ./robot_test/execute_test.sh   # Run tests
+```
