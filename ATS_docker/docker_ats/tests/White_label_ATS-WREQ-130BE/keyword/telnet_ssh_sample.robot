@@ -74,7 +74,7 @@ Reference Clear cisco port
     log    ${result}
 
     Telnet.Close All Connections
-    [RETURN]    ${result}
+    RETURN    ${result}
 
 
 
@@ -93,7 +93,7 @@ cli
     ${result}=     Catenate    SEPARATOR=    ${result_1}    ${result_2}    ${result_3}
     ${result}=    Remove String    ${result}    NoneNone
     log    ${result}
-    [RETURN]    ${result}
+    RETURN    ${result}
 
 cli_serial
     [Arguments]    ${Device}    ${Command}    ${timeout}    ${prompt}
@@ -107,7 +107,7 @@ cli_serial
     ${result}=    pyserial.read_until_print_result    ${prompt}
     log    ${result}
     pyserial.close_Serial_Port
-    [RETURN]    ${result}
+    RETURN    ${result}
 
 cli_ssh
     [Arguments]    ${Device}    ${Command}    ${timeout}    ${prompt}
@@ -121,7 +121,7 @@ cli_ssh
     ${result}=    SSHLibrary.Read Until Prompt
     log    ${result}
     SSHLibrary.Close All Connections
-    [RETURN]    ${result}
+    RETURN    ${result}
 
 cli_telnet
     [Arguments]    ${Device}    ${Command}    ${timeout}    ${prompt}
@@ -142,4 +142,4 @@ cli_telnet
     ${result} =   Catenate    ${result}   ${result_2}
     log    ${result}
     Telnet.Close Connection
-    [RETURN]    ${result}
+    RETURN    ${result}
