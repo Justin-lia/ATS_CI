@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4 (Python 3.12.3 on linux)" generated="2026-01-09T11:08:11.189684" rpa="false" schemaversion="5">
+<suite id="s1" name="Other Test" source="/workspace/tests/robot_script/White_label_ATS-WREQ-130BE/test_suites/tmp/other_test.robot">
+<test id="s1-t1" name="Other test enable sshd" line="14">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-09T11:08:11.511941" level="INFO">Enable controller SSH</msg>
+<arg>Enable controller SSH</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-09T11:08:11.511455" elapsed="0.000551"/>
+</kw>
+<kw name="Enable controller SSH">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Retry Enable controller SSH">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-09T11:08:11.513513" elapsed="0.000130"/>
+</kw>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-09T11:08:11.513242" elapsed="0.000468"/>
+</kw>
+<kw name="Login GUI">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:08:11.514491" level="INFO">Opening browser 'firefox' to base url 'http://192.168.1.1'.</msg>
+<arg>http://${DUT_IP}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-09T11:08:11.514205" elapsed="9.848353"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:08:24.363208" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:08:21.362747" elapsed="3.000573"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:08:24.363849" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_username"]'.</msg>
+<arg>xpath=//*[@id="acnt_username"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:08:24.363504" elapsed="0.045068"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:08:25.409977" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:08:24.408819" elapsed="1.001273"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:08:25.410485" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_passwd"]'.</msg>
+<arg>xpath=//*[@id="acnt_passwd"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:08:25.410278" elapsed="0.018428"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:08:26.430144" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:08:25.429142" elapsed="1.001103"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:08:26.430634" level="INFO">Clicking element 'xpath=//*[@id="myButton"]'.</msg>
+<arg>xpath=//*[@id="myButton"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:08:26.430428" elapsed="0.068742"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:08:56.500840" level="INFO">Slept 30 seconds.</msg>
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:08:26.499510" elapsed="30.001492"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:09:30.752333" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-09T11:09:30.752501" level="FAIL">UnexpectedAlertPresentException: Alert Text: 請選擇 Router Mode 或 Agent Mode！
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3244:11
+</msg>
+<arg>xpath=//*[@id="menu_dashboard"]</arg>
+<arg>timeout=60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-09T11:08:56.501185" elapsed="34.318803">UnexpectedAlertPresentException: Alert Text: 請選擇 Router Mode 或 Agent Mode！
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3244:11
+</status>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.body.style.zoom='0.5'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.820219" elapsed="0.000040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.820369" elapsed="0.000028"/>
+</kw>
+<arg>${HOST}</arg>
+<status status="FAIL" start="2026-01-09T11:08:11.513875" elapsed="79.306649">UnexpectedAlertPresentException: Alert Text: 請選擇 Router Mode 或 Agent Mode！
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3244:11
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="menu_adv_setting"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.820657" elapsed="0.000047"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.820838" elapsed="0.000034"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="menu_adv_setting_ssh"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.821023" elapsed="0.000030"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.821206" elapsed="0.000053"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<var>${status}</var>
+<arg>id=ssh_enabled</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.821361" elapsed="0.000025"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == '0'</arg>
+<arg>Click ssh button</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-01-09T11:09:30.821494" elapsed="0.000026"/>
+</kw>
+<status status="FAIL" start="2026-01-09T11:08:11.513011" elapsed="79.308604">UnexpectedAlertPresentException: Alert Text: 請選擇 Router Mode 或 Agent Mode！
+Message: Unexpected alert dialog detected. Performed handler "dismiss"
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+UnexpectedAlertOpenError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:927:5
+GeckoDriver.prototype._handleUserPrompts@chrome://remote/content/marionette/driver.sys.mjs:3244:11
+</status>
+</kw>
+<kw name="Retry Enable controller SSH">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-09T11:09:40.823020" elapsed="1.790197"/>
+</kw>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-09T11:09:40.822673" elapsed="1.790632"/>
+</kw>
+<kw name="Login GUI">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:09:42.614063" level="INFO">Opening browser 'firefox' to base url 'http://192.168.1.1'.</msg>
+<arg>http://${DUT_IP}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-09T11:09:42.613826" elapsed="8.082275"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:09:53.696938" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:09:50.696385" elapsed="3.000739"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:09:53.697582" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_username"]'.</msg>
+<arg>xpath=//*[@id="acnt_username"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:09:53.697339" elapsed="0.044365"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:09:54.743168" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:09:53.742004" elapsed="1.001261"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:09:54.743674" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_passwd"]'.</msg>
+<arg>xpath=//*[@id="acnt_passwd"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:09:54.743440" elapsed="0.017153"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:09:55.761736" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:09:54.761038" elapsed="1.000807"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:09:55.762337" level="INFO">Clicking element 'xpath=//*[@id="myButton"]'.</msg>
+<arg>xpath=//*[@id="myButton"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:09:55.762084" elapsed="0.074540"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:10:25.837245" level="INFO">Slept 30 seconds.</msg>
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:09:55.836816" elapsed="30.000529"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:11:25.998779" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-09T11:11:25.998955" level="FAIL">Element 'xpath=//*[@id="menu_dashboard"]' not visible after 1 minute.</msg>
+<arg>xpath=//*[@id="menu_dashboard"]</arg>
+<arg>timeout=60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-09T11:10:25.837526" elapsed="60.161811">Element 'xpath=//*[@id="menu_dashboard"]' not visible after 1 minute.</status>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>document.body.style.zoom='0.5'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:25.999530" elapsed="0.000037"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:25.999671" elapsed="0.000029"/>
+</kw>
+<arg>${HOST}</arg>
+<status status="FAIL" start="2026-01-09T11:09:42.613496" elapsed="103.386305">Element 'xpath=//*[@id="menu_dashboard"]' not visible after 1 minute.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="menu_adv_setting"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:25.999972" elapsed="0.000029"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:26.000098" elapsed="0.000032"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="menu_adv_setting_ssh"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:26.000238" elapsed="0.000026"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:26.000358" elapsed="0.000025"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<var>${status}</var>
+<arg>id=ssh_enabled</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:26.000489" elapsed="0.000025"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == '0'</arg>
+<arg>Click ssh button</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-01-09T11:11:26.000632" elapsed="0.000027"/>
+</kw>
+<status status="FAIL" start="2026-01-09T11:09:40.822341" elapsed="105.178407">Element 'xpath=//*[@id="menu_dashboard"]' not visible after 1 minute.</status>
+</kw>
+<kw name="Retry Enable controller SSH">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-09T11:11:36.002176" elapsed="3.465996"/>
+</kw>
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-09T11:11:36.001758" elapsed="3.466506"/>
+</kw>
+<kw name="Login GUI">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:11:39.469044" level="INFO">Opening browser 'firefox' to base url 'http://192.168.1.1'.</msg>
+<arg>http://${DUT_IP}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-09T11:11:39.468795" elapsed="9.642640"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:11:52.112477" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:11:49.111675" elapsed="3.000901"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:11:52.112991" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_username"]'.</msg>
+<arg>xpath=//*[@id="acnt_username"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:11:52.112755" elapsed="0.046487"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:11:53.160646" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:11:52.159570" elapsed="1.001174"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:11:53.161228" level="INFO">Typing text 'admin' into text field 'xpath=//*[@id="acnt_passwd"]'.</msg>
+<arg>xpath=//*[@id="acnt_passwd"]</arg>
+<arg>admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:11:53.161025" elapsed="0.017563"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:11:54.179694" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:11:53.178917" elapsed="1.000890"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:11:54.180346" level="INFO">Clicking element 'xpath=//*[@id="myButton"]'.</msg>
+<arg>xpath=//*[@id="myButton"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:11:54.180117" elapsed="0.069828"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:24.250558" level="INFO">Slept 30 seconds.</msg>
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:11:54.250137" elapsed="30.000583"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="menu_dashboard"]</arg>
+<arg>timeout=60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-09T11:12:24.250994" elapsed="0.017717"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:24.269333" level="INFO">Executing JavaScript:
+document.body.style.zoom='0.5'
+Without any arguments.</msg>
+<arg>document.body.style.zoom='0.5'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-01-09T11:12:24.268969" elapsed="0.003692"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:25.273298" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:24.272836" elapsed="1.000604"/>
+</kw>
+<arg>${HOST}</arg>
+<status status="PASS" start="2026-01-09T11:11:39.468458" elapsed="45.805189"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:25.274200" level="INFO">Clicking element 'xpath=//*[@id="menu_adv_setting"]'.</msg>
+<arg>xpath=//*[@id="menu_adv_setting"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:12:25.274006" elapsed="0.064198"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:30.339151" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:25.338382" elapsed="5.000868"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:30.339631" level="INFO">Clicking element 'xpath=//*[@id="menu_adv_setting_ssh"]'.</msg>
+<arg>xpath=//*[@id="menu_adv_setting_ssh"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:12:30.339443" elapsed="0.066358"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:45.406568" level="INFO">Slept 15 seconds.</msg>
+<arg>15</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:30.406098" elapsed="15.000573"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:45.416021" level="INFO">${status} = 0</msg>
+<var>${status}</var>
+<arg>id=ssh_enabled</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:12:45.406888" elapsed="0.009175"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click ssh button">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:45.417167" level="INFO">Clicking element 'xpath=//*[@id="switch_layout_ssh_enabled"]'.</msg>
+<arg>xpath=//*[@id="switch_layout_ssh_enabled"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:12:45.417005" elapsed="0.061040"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:50.478950" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:45.478355" elapsed="5.000695"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:50.479426" level="INFO">Clicking element 'xpath=//*[@id="apply"]'.</msg>
+<arg>xpath=//*[@id="apply"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-09T11:12:50.479236" elapsed="0.090932"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:12:55.571215" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:50.570391" elapsed="5.000975"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-01-09T11:12:55.571789" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-01-09T11:12:55.571626" elapsed="0.024128"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-09T11:13:25.596982" level="INFO">Slept 30 seconds.</msg>
+<arg>30</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-09T11:12:55.596311" elapsed="30.000899"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-09T11:13:25.597642" elapsed="2.297109"/>
+</kw>
+<status status="PASS" start="2026-01-09T11:12:45.416689" elapsed="42.478242"/>
+</kw>
+<arg>'${status}' == '0'</arg>
+<arg>Click ssh button</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-01-09T11:12:45.416243" elapsed="42.478771"/>
+</kw>
+<status status="PASS" start="2026-01-09T11:11:36.001432" elapsed="111.893644"/>
+</kw>
+<arg>3x</arg>
+<arg>10s</arg>
+<arg>Retry Enable controller SSH</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-01-09T11:08:11.512512" elapsed="316.382611"/>
+</kw>
+<status status="PASS" start="2026-01-09T11:08:11.512212" elapsed="316.382971"/>
+</kw>
+<status status="PASS" start="2026-01-09T11:08:11.509120" elapsed="316.386177"/>
+</test>
+<status status="PASS" start="2026-01-09T11:08:11.190436" elapsed="316.705610"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Other Test" id="s1" pass="1" fail="0" skip="0">Other Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

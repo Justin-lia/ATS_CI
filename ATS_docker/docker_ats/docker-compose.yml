@@ -19,6 +19,7 @@ services:
       - DISPLAY=:99
     volumes:
       - ./tests:/workspace/tests
+      - ../robot_script:/workspace/tests/robot_script
       - ~/.ssh:/root/.ssh
     entrypoint: ["/workspace/tests/fix_interface_name_ats.sh"]
     command: ["sh", "-c", "Xvfb :99 -screen 0 1280x1024x24 & x11vnc -display :99 -forever -shared -rfbport 5900 & /bin/bash"]

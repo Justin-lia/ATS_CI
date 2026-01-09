@@ -2,16 +2,6 @@
 
 source ./config.sh
 
-cp ./config.sh ./docker_ats/tests/
-cp ./fix_interface_name_ats.sh ./docker_ats/tests/
-
-cp ./config.sh ./docker_wan/tests/
-cp ./fix_interface_name_wan.sh ./docker_wan/tests/
-
-cp ./config.sh ./docker_lan/tests/
-cp ./fix_interface_name_lan.sh ./docker_lan/tests/
-
-
 #export env_interface=${env_interface}
 
 export env_ats_inet_mac=${env_ats_inet_mac}
@@ -26,15 +16,15 @@ export env_wan_wan_mac=${env_wan_wan_mac}
 export env_wan_back_mac=${env_wan_back_mac}
 
 
-if [ ${ats_interface} = ${lan_interface} ]; then
-	export env_ats_interface=${ats_interface}
-	export env_lan_interface=${ats_interface}.${lan_vlan_id}
-	export env_wan_interface=${ats_interface}.${wan_vlan_id}
+#if [ ${ats_interface} = ${lan_interface} ]; then
+if [ ${ats_interface} = ${lan_interface%.*} ]; then
+	export env_backup_interface=${ats_interface}.${backup_vlan_id}
 else
-	export env_ats_interface=${ats_interface}
-	export env_lan_interface=${lan_interface}
-	export env_wan_interface=${wan_interface}
+	export env_backup_interface=${ats_interface}
 fi
+export env_ats_interface=${ats_interface}
+export env_lan_interface=${lan_interface}
+export env_wan_interface=${wan_interface}
 
 echo "host interface name"
 echo "eth-inet binding host interface name: ${env_ats_interface}"
@@ -46,7 +36,7 @@ echo "eth-wan binding host interface name: ${env_wan_interface}"
 docker network create \
   --driver=macvlan \
   --subnet=192.168.100.0/24 \
-  -o parent=${env_ats_interface}.99 \
+  -o parent=${env_backup_interface} \
   env_net
 
 echo "build env ats"
