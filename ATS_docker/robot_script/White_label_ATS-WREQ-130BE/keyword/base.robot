@@ -1,2 +1,0 @@
-*** Settings ***
-Resource         ../base.robot
