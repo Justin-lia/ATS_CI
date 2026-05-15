@@ -42,11 +42,23 @@ Inside containers, interfaces are renamed by `fix_interface_name_*.sh`:
 
 **Scenario A — 1 NIC + Switch + VLAN** (current default in `config.sh`):
 ```
-HOST PC ──[Switch]── WAN (DUT), LAN (DUT), Internet
-ats_interface='enp3s0f1'
-lan_interface='enp3s0f1.20'   # VLAN 20
-wan_interface='enp3s0f1.30'   # VLAN 30
-backup_vlan_id='99'
+[HOST PC] (enp3s0f1)
+    │
+    │ (Trunk: VLAN 1, 20, 30, 99)
+    │
+[SG2008 Switch]
+    ├── [Port 1] Uplink to Host
+    ├── [Port 2] Access (VLAN 20) ─── [DUT LAN Port]
+    ├── [Port 3] Access (VLAN 30) ─── [DUT WAN Port]
+    ├── [Port 7] Access (VLAN 99) ─── [WiFi STA / Management]
+    └── [Port 8] Access (VLAN 1)  ─── [Internet / External]
+```
+**Interface Configuration**:
+```
+ats_interface='enp3s0f1'      # Physical interface
+lan_interface='enp3s0f1.20'   # Mapping to Port 2 (DUT LAN)
+wan_interface='enp3s0f1.30'   # Mapping to Port 3 (DUT WAN)
+backup_vlan_id='99'           # Mapping to Port 7 (WiFi STA)
 ```
 
 **Scenario B — 3 NICs, no switch**:
